@@ -5,6 +5,7 @@
  */
 package Main;
 
+
 import Controller.Configurador;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -69,5 +70,4 @@ public class Main extends Application {
         Configurador config = new Configurador();
          config.publish();
     }
-    
 }
