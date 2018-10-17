@@ -5,6 +5,7 @@
  */
 package Main;
 
+import Controller.Configurador;
 import Model.cadastroCandidato;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
