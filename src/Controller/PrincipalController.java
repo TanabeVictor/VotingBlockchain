@@ -17,6 +17,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.input.InputMethodEvent;
 import javafx.util.Duration;
 import javax.swing.JOptionPane;
 
@@ -66,15 +67,15 @@ public class PrincipalController implements Initializable {
     private Label labelNomeVice;
     @FXML
     private Label labelNomePartido;
+    
     CandidatoController ctrCandidato = new CandidatoController();
-    Candidato cand;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
             ctrCandidato.recuperaLista();
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null,"Erro ao Recuperar Lista de Candidatos!");}
+            JOptionPane.showMessageDialog(null, "Erro ao Recuperar Lista de Candidatos!");}
         
         KeyFrame frame = new KeyFrame(Duration.millis(1000), e -> atualizaHoras());
         Timeline timeline = new Timeline(frame);
@@ -82,20 +83,23 @@ public class PrincipalController implements Initializable {
         timeline.play();
         
         addTextLimiter(labelVoto);
-        
-        int numeroInformado = Integer.parseInt(labelVoto.getText());
-        
+       
+        labelVoto.textProperty().addListener(new ChangeListener<String>() {
+        @Override
+        public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+        String numeroInformado = labelVoto.getText();
+        if(numeroInformado.length() < 2){
+            labelNomeCandidato.setText("Nome do Candidato");
+            labelNomeVice.setText("Nome do Vice");
+            labelNomePartido.setText("Nome do Partido");}
         try {
-            cand = new Candidato("", "", "", 0);
+            Candidato cand = ctrCandidato.retornaCandidato(Integer.parseInt(numeroInformado));
+            labelNomeCandidato.setText(cand.getNomeCandidato());
+            labelNomeVice.setText(cand.getNomeVice());
+            labelNomePartido.setText(cand.getPartido());
         } catch (Exception ex) {
-           JOptionPane.showMessageDialog(null, "Erro ao Criar Novo Candidato");}
-        
-        try {
-            cand = ctrCandidato.retornaCandidato(numeroInformado);
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao Exibir Candidato Informado");}
-        
-        labelNomeCandidato.setText(cand.getNomeCandidato());
+            System.out.println("");}
+        }});
         exibeData();
     }
 
@@ -183,5 +187,9 @@ public class PrincipalController implements Initializable {
 
     @FXML
     private void mouseEventBranco(ActionEvent event) {
+    }
+
+    @FXML
+    private void insercaoVotoLabel(InputMethodEvent event) {
     }
 }

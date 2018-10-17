@@ -23,7 +23,7 @@ public class HomeController implements Initializable {
     @FXML
     private CheckBox rememberCheckbox;
 
-    EleitorController verificador = new EleitorController();
+    //EleitorController verificador = new EleitorController();
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -33,10 +33,10 @@ public class HomeController implements Initializable {
    
     @FXML
     private void loginAction(ActionEvent event) {
-        String user = userLabel.getText();
-        String password = passwordLabel.getText();
-        int senha = Integer.parseInt(password);
-        verificador.retornaEleitor(user, senha);
+        //String user = userLabel.getText();
+        //String password = passwordLabel.getText();
+        //int senha = Integer.parseInt(password);
+        //verificador.retornaEleitor(user, senha);
         Main.changeScreen("profile");
     }
 

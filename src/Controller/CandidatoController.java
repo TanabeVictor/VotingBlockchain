@@ -1,7 +1,8 @@
 package Controller;
 
-import java.util.Vector;
+
 import Model.Candidato;
+import java.util.Vector;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -11,23 +12,21 @@ import java.io.ObjectOutputStream;
 public class CandidatoController {
     
     private Vector listaCandidatos = new Vector();
-    private final String arquivo = "candidatos.dat";
+    private final String arquivo = "candidatos.txt";
     
     public void addCandidato(Candidato candidato) throws Exception {
         listaCandidatos.add(candidato);
         gravaLista();}
-
-    public Candidato retornaCandidato(int valorCodigo) throws Exception {
-        Candidato aux = new Candidato("", "", "", 0);
-        for (int i = 0; i < listaCandidatos.size(); i++) {
-            aux = (Candidato) listaCandidatos.elementAt(i);
-            if (aux.getCodigo() == valorCodigo) {
-               return aux;
-            }
-        }
-        return null;
-    }
-
+    
+    
+    public Candidato retornaCandidato(int valorCodigo) {
+        Candidato objCandidato = null;
+        for (int intIdx = 0; intIdx < listaCandidatos.size(); intIdx++) {
+        objCandidato = (Candidato)listaCandidatos.elementAt(intIdx);
+        if (objCandidato.getCodigo()== valorCodigo)
+        return objCandidato;}
+        return null;}
+    
     public void gravaLista() throws Exception {
         FileOutputStream objFileOS = new FileOutputStream(arquivo);
         ObjectOutputStream objOS = new ObjectOutputStream(objFileOS);

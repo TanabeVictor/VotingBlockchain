@@ -1,8 +1,9 @@
 package Model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Eleitor {
+public class Eleitor implements Serializable{
     int userID, senha;
     String nomeEleitor, endereco, cpf, sexo, naturalidade;
     Date dataNasc;
