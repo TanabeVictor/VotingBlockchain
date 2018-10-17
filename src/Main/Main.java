@@ -39,7 +39,7 @@ public class Main extends Application {
         votingScene = new Scene(fxmlVoting, 1200, 600);
         
         Parent fxmlConfirma = FXMLLoader.load(getClass().getResource("/View/Confirma.fxml"));
-        confirmaScene = new Scene(fxmlVoting, 1200, 600);
+        confirmaScene = new Scene(fxmlConfirma, 1200, 600);
         
         primaryStage.setScene(mainScene);
         primaryStage.show();
