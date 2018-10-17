@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.HomeController">
+    <stylesheets>
+        <URL value="@/Style/style.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane prefHeight="600.0" prefWidth="1200.0">
+         <children>
+            <Pane layoutX="500.0" prefHeight="594.0" prefWidth="699.0">
+               <children>
+                  <Label layoutX="540.0" layoutY="565.0" text="© 2018, Victor Tanabe" textFill="#8f8f8f">
+                     <font>
+                        <Font name="Segoe UI" size="14.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="1.0" layoutY="550.0" prefHeight="15.0" prefWidth="699.0" />
+                  <Label id="signInText2" layoutX="35.0" layoutY="85.0" stylesheets="@../Style/style.css" text="Sign In" textFill="#5c5c5c">
+                     <font>
+                        <Font name="Megan June" size="30.0" />
+                     </font>
+                  </Label>
+                  <PasswordField id="fieldLogin" fx:id="passwordLabel" layoutX="40.0" layoutY="280.0" prefHeight="25.0" prefWidth="600.0" promptText="Password" stylesheets="@../Style/style.css">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </PasswordField>
+                  <TextField id="fieldLogin" fx:id="userLabel" layoutX="40.0" layoutY="200.0" prefHeight="25.0" prefWidth="600.0" promptText="User / CPF" stylesheets="@../Style/style.css">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <CheckBox id="checkbox" fx:id="rememberCheckbox" layoutX="40.0" layoutY="350.0" mnemonicParsing="false" onAction="#checkboxAction" stylesheets="@../Style/style.css" text="Remember Me" textFill="#5c5c5c">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </CheckBox>
+                  <Button id="buttonLogin" fx:id="loginButton" layoutX="40.0" layoutY="430.0" mnemonicParsing="false" onAction="#loginAction" prefHeight="30.0" prefWidth="120.0" stylesheets="@../Style/style.css" text="LOGIN" textFill="#f27900">
+                     <font>
+                        <Font name="Agency FB Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Label id="signInText" layoutX="150.0" layoutY="85.0" stylesheets="@../Style/style.css" text="Sign Up" textFill="#e88c37">
+                     <font>
+                        <Font name="Megan June" size="30.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="120.0" layoutY="94.0" text="or" textFill="#5c5c5c">
+                     <font>
+                        <Font name="Megan June" size="24.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="68.0" layoutY="150.0" prefHeight="4.0" prefWidth="584.0" />
+               </children>
+            </Pane>
+            <Pane id="sidebar" prefHeight="600.0" prefWidth="500.0" styleClass="mainFxmlClass" stylesheets="@../Style/style.css">
+               <children>
+                  <Label layoutX="40.0" layoutY="250.0" prefHeight="117.0" prefWidth="420.0" text="Exerça a sua cidadania e mantenha seu voto seguro através do Blockchain. Vote agora mesmo, de onde estiver e tenha a certeza da segurança de seu voto." textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font name="Segoe UI Light" size="16.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="249.0" fitWidth="196.0" layoutX="307.0" layoutY="394.0" nodeOrientation="INHERIT" opacity="0.15" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Img/election.png" />
+                     </image>
+                  </ImageView>
+                  <Separator layoutX="497.0" orientation="VERTICAL" prefHeight="600.0" prefWidth="5.0" />
+                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="173.0" layoutY="472.0" pickOnBounds="true" preserveRatio="true" />
+                  <Label layoutX="41.0" layoutY="136.0" text="Seja" textFill="#ff6200">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="41.0" layoutY="181.0" text="Bem Vindo." textFill="#ff6200">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="40.0" layoutY="247.0" opacity="0.13" prefHeight="3.0" prefWidth="262.0" style="-fx-border-color: #606060; -fx-background-color: #606060;" />
+                  <Label layoutX="45.0" layoutY="35.0" text="Voting" textFill="#acaaaa">
+                     <font>
+                        <Font name="Megan June" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="95.0" layoutY="35.0" text="Blockchain" textFill="#9a5609">
+                     <font>
+                        <Font name="Megan June" size="24.0" />
+                     </font>
+                  </Label>
+                  <Button id="buttonLearn" layoutX="40.0" layoutY="430.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" stylesheets="@../Style/style.css" text="LEARN MORE" textFill="#545454">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+               </children></Pane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

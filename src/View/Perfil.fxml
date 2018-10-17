@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1200.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.PerfilController">
+    <stylesheets>
+        <URL value="@/Style/style.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane prefHeight="600.0" prefWidth="1200.0">
+         <children>
+            <Pane layoutY="60.0" prefHeight="250.0" prefWidth="1200.0" style="-fx-background-color: #bc5100;" />
+            <Pane id="topBar" prefHeight="60.0" prefWidth="1200.0" stylesheets="@../Style/style.css">
+               <children>
+                  <Label layoutX="45.0" layoutY="20.0" text="Voting" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="100.0" layoutY="20.0" text="Blockchain" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="1150.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Img/menu.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="890.0" layoutY="25.0" text="Minas Gerais, Brazil" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="25.0" fitWidth="20.0" layoutX="860.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Img/location.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutY="60.0" prefHeight="540.0" prefWidth="1200.0">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="90.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Img/perfil.jpg" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="269.0" layoutY="114.0" text="Victor Pereira Moreira" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="1147.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Img/edit.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="90.0" layoutY="25.0" text="Dados Cadastrais" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="logoutButton" fitHeight="32.0" fitWidth="32.0" layoutX="45.0" layoutY="21.0" onMouseClicked="#logoutAction" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Img/back.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="300.0" layoutY="152.0" text="21/01/1998" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutY="251.0" prefHeight="5.0" prefWidth="1200.0" />
+                  <Pane layoutY="250.0" prefHeight="70.0" prefWidth="1200.0" style="-fx-background-color: #964101;">
+                     <children>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="35.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Img/location.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="85.0" layoutY="12.0" prefHeight="45.0" prefWidth="278.0" text="Paraisópolis, Minas Gerais, Brazil" textFill="WHITE" wrapText="true">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="433.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Img/envelope.png" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="483.0" layoutY="21.0" text="tanabebr@gmail.com" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Label layoutX="85.0" layoutY="330.0" text="Recent Activity" textFill="#5c5c5c">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="615.0" layoutY="352.0" orientation="VERTICAL" prefHeight="160.0" prefWidth="4.0" />
+                  <Label layoutX="80.0" layoutY="381.0" text="00/00/00   00:00" />
+                  <Separator layoutX="196.0" layoutY="358.0" orientation="VERTICAL" prefHeight="180.0" prefWidth="5.0" />
+                  <Separator layoutX="88.0" layoutY="398.0" prefHeight="4.0" prefWidth="521.0" />
+                  <Label layoutX="225.0" layoutY="346.0" text="Voto - Presidente" textFill="#414141">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="225.0" layoutY="374.0" text="Victor Tanabe votou em Blá Blá Blá para Presidente" textFill="#5c5c5c">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="80.0" layoutY="457.0" text="00/00/00   00:00" />
+                  <Separator layoutX="87.0" layoutY="474.0" prefHeight="4.0" prefWidth="521.0" />
+                  <Label layoutX="224.0" layoutY="422.0" text="Voto - Deputado Estadual" textFill="#414141">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="224.0" layoutY="450.0" text="Victor Tanabe votou em Blá Blá Blá para Deputado Estadual" textFill="#5c5c5c">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="630.0" layoutY="379.0" text="00/00/00   00:00" />
+                  <Separator layoutX="746.0" layoutY="356.0" orientation="VERTICAL" prefHeight="180.0" prefWidth="5.0" />
+                  <Separator layoutX="638.0" layoutY="396.0" prefHeight="4.0" prefWidth="521.0" />
+                  <Label layoutX="775.0" layoutY="344.0" text="Voto - Deputado Federal">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="775.0" layoutY="372.0" text="Victor Tanabe votou em Blá Blá Blá para Deputado Federal" textFill="#5c5c5c">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="630.0" layoutY="455.0" text="00/00/00   00:00" />
+                  <Separator layoutX="637.0" layoutY="472.0" prefHeight="4.0" prefWidth="521.0" />
+                  <Label layoutX="774.0" layoutY="420.0" text="Voto - Senador" textFill="#414141">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="774.0" layoutY="448.0" text="Victor Tanabe votou em Blá Blá Blá para Senador" textFill="#5c5c5c">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="264.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Img/calendar.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="34.0" fitWidth="31.0" layoutX="264.0" layoutY="191.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Img/gender.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="300.0" layoutY="195.0" text="Masculino" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="24.0" fitWidth="23.0" layoutX="265.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Img/key.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="300.0" layoutY="77.0" text="2078 9486 0281" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="615.0" layoutY="52.0" opacity="0.25" orientation="VERTICAL" prefHeight="188.0" prefWidth="5.0" />
+                  <Label layoutX="645.0" layoutY="77.0" text="Pai: Peterson Odorisi Moreira" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="645.0" layoutY="114.0" text="Mãe: Shirley Cristina Tanabe Pereira Moreira" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="141.0" fitWidth="128.0" layoutX="1033.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Img/digital.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="1039.0" layoutY="79.0" text="Polegar Esquerdo:" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="464.0" layoutY="77.0" text="Seção: 201" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="645.0" layoutY="152.0" text="Data de Emissão: 02/12/2015" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="645.0" layoutY="195.0" text="Situação: " textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="739.0" layoutY="195.0" text="Regular" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Button id="buttonLogin" fx:id="nextButton" layoutX="1074.0" layoutY="495.0" mnemonicParsing="false" onAction="#nextAction" stylesheets="@../Style/style.css" text="Prosseguir" textFill="WHITE">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
