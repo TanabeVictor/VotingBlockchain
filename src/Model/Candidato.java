@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Model;
 
 /**
@@ -14,6 +9,13 @@ public class Candidato {
     int codigo;
     String nomeCandidato, nomeImagem, nomePartido;
     
+    public Candidato(String nomeCandidato, String nomeImagem, String nomePartido, int codigo) throws Exception {
+        this.nomeCandidato = nomeCandidato;
+        this.nomeImagem = nomeImagem;
+        this.nomePartido = nomePartido;
+        this.codigo = codigo;
+    }
+
     public void setCodigo(int codigo){
     this.codigo = codigo;
     }

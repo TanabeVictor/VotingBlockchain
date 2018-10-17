@@ -5,8 +5,7 @@
  */
 package Main;
 
-
-import Controller.Configurador;
+import Model.cadastroCandidato;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,20 +13,16 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
-
-/**
- *
- * @author vitau
- */
 public class Main extends Application {
     private static Stage stage;
     private static Scene mainScene;
     private static Scene profileScene;
-    private static Scene votingScene;
-    
+    private static Scene votingScene;    
+    cadastroCandidato cadCandidato;
     
     @Override
     public void start(Stage primaryStage) throws Exception{
+        //cadCandidato =  new cadastroCandidato();
         stage = primaryStage;
         
         primaryStage.setTitle("VotingBlockchain - E - Voting Blockchain System ");
@@ -44,7 +39,6 @@ public class Main extends Application {
         primaryStage.setScene(mainScene);
         primaryStage.show();
         primaryStage.getIcons().add(new Image("/Img/icon.png"));
-        
     }
     
     
@@ -65,9 +59,10 @@ public class Main extends Application {
     }
  
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         launch(args);
-        Configurador config = new Configurador();
-         config.publish();
+        //Configurador config = new Configurador();
+        //config.publish();
+        
     }
 }

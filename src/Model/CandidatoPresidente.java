@@ -14,6 +14,19 @@ public class CandidatoPresidente {
     int codigo;
     String nomeCandidato, nomeImagem, nomeVice, nomeImagemVice, nomePartido;
     
+    public CandidatoPresidente(String nomeCandidato, String nomeImagem, String nomePartido, String nomeVice, String nomeImagemVice, int codigo) throws Exception {
+        this.nomeCandidato = nomeCandidato;
+        this.nomeImagem = nomeImagem;
+        this.nomePartido = nomePartido;
+        this.codigo = codigo;
+        this.nomeVice = nomeVice;
+        this.nomeImagemVice = nomeImagemVice;
+    }
+
+    public CandidatoPresidente() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
     public void setCodigo(int codigo){
     this.codigo = codigo;
     }
@@ -46,7 +59,6 @@ public class CandidatoPresidente {
     return this.nomeCandidato;
     }
         
-    
     public String getNomeImagem(){
     return this.nomeImagem;
     }

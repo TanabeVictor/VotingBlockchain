@@ -1,9 +1,12 @@
 package Controller;
 
+import Model.Candidato;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.beans.value.ChangeListener;
@@ -15,6 +18,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.util.Duration;
+import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -56,15 +60,42 @@ public class PrincipalController implements Initializable {
     private TextField labelVoto;
     @FXML
     private Label data;
-
+    @FXML
+    private Label labelNomeCandidato;
+    @FXML
+    private Label labelNomeVice;
+    @FXML
+    private Label labelNomePartido;
+    CandidatoController ctrCandidato = new CandidatoController();
+    Candidato cand;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        try {
+            ctrCandidato.recuperaLista();
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null,"Erro ao Recuperar Lista de Candidatos!");}
+        
         KeyFrame frame = new KeyFrame(Duration.millis(1000), e -> atualizaHoras());
         Timeline timeline = new Timeline(frame);
         timeline.setCycleCount(Timeline.INDEFINITE);
         timeline.play();
         
         addTextLimiter(labelVoto);
+        
+        int numeroInformado = Integer.parseInt(labelVoto.getText());
+        
+        try {
+            cand = new Candidato("", "", "", 0);
+        } catch (Exception ex) {
+           JOptionPane.showMessageDialog(null, "Erro ao Criar Novo Candidato");}
+        
+        try {
+            cand = ctrCandidato.retornaCandidato(numeroInformado);
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao Exibir Candidato Informado");}
+        
+        labelNomeCandidato.setText(cand.getNomeCandidato());
         exibeData();
     }
 
