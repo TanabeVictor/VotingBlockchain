@@ -9,10 +9,10 @@ package Model;
  *
  * @author vitau
  */
-public class Candidato {
+public class CandidatoPresidente {
 
     int codigo;
-    String nomeCandidato, nomeImagem, nomePartido;
+    String nomeCandidato, nomeImagem, nomeVice, nomeImagemVice, nomePartido;
     
     public void setCodigo(int codigo){
     this.codigo = codigo;
@@ -26,6 +26,14 @@ public class Candidato {
     this.nomeImagem = nomeImagem;
     }
    
+    public void setNomeVice(String nomeVice){
+    this.nomeVice = nomeVice;
+    }
+    
+    public void setNomeImagemVice(String nomeImagemVice){
+    this.nomeImagemVice = nomeImagemVice;
+    }
+    
     public void setPartido(String nomePartido){
     this.nomePartido = nomePartido;
     }
@@ -37,9 +45,18 @@ public class Candidato {
     public String getNomeCandidato(){
     return this.nomeCandidato;
     }
+        
     
     public String getNomeImagem(){
     return this.nomeImagem;
+    }
+   
+    public String getNomeVice(){
+    return this.nomeVice;
+    }
+    
+    public String getNomeImagemVice(){
+    return this.nomeImagemVice;
     }
     
     public String getPartido(){
