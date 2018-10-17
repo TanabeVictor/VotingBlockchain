@@ -16,7 +16,7 @@ public class Eleitor {
     }
     
     public void setCPF(String cpf){
-    this.cpf = cpf;
+    this.cpf = cpf; 
     }
     
     public void setSexo(String sexo){

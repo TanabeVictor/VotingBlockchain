@@ -10,5 +10,6 @@ package Model;
  * @author vitau
  */
 public class Candidato {
-    
+    int codigo;
+    String nomeCandidatol;    
 }
