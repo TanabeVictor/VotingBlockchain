@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1200.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.PrincipalController">
+    <stylesheets>
+        <URL value="@/Style/style.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane prefHeight="600.0" prefWidth="1200.0">
+         <children>
+            <Pane id="topBar" prefHeight="60.0" prefWidth="1200.0" stylesheets="@../Style/style.css">
+               <children>
+                  <Label layoutX="45.0" layoutY="20.0" text="Voting" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="100.0" layoutY="20.0" text="Blockchain" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="1150.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Img/menu.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="536.0" layoutY="25.0" text="Horário Oficial: " textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="hora" layoutX="651.0" layoutY="25.0" text="00:00:00" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="890.0" layoutY="25.0" text="Minas Gerais, Brazil" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="300.0" layoutY="25.0" text="Data:" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="data" layoutX="350.0" layoutY="25.0" text="00-00-0000" textFill="WHITE">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="25.0" fitWidth="20.0" layoutX="860.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Img/location.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Pane layoutY="60.0" prefHeight="540.0" prefWidth="1200.0">
+               <children>
+                  <Label layoutX="45.0" layoutY="141.0" text="Informe o Seu Voto Para:" textFill="#5c5c5c">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="269.0" layoutY="141.0" text="Presidente">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="45.0" layoutY="225.0" text="Número:" textFill="#5c5c5c">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="45.0" layoutY="60.0" text="Seja Bem Vindo," textFill="#5c5c5c">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="45.0" layoutY="280.0" text="Nome:" textFill="#5c5c5c">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <TextField id="labelView" fx:id="labelVoto" disable="true" layoutX="138.0" layoutY="199.0" prefHeight="60.0" prefWidth="88.0" stylesheets="@../Style/style.css">
+                     <font>
+                        <Font name="System Bold" size="36.0" />
+                     </font></TextField>
+                  <Label layoutX="125.0" layoutY="280.0" text="Nome do Candidato">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutY="440.0" prefWidth="1200.0" />
+                  <Label layoutX="45.0" layoutY="445.0" text="Aperte a Tecla" textFill="#5c5c5c">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="45.0" layoutY="470.0" text="VERDE" textFill="#5c5c5c">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="45.0" layoutY="505.0" text="LARANJA" textFill="#5c5c5c">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="120.0" layoutY="470.0" text="para CONFIRMAR este voto" textFill="#5c5c5c">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="120.0" layoutY="505.0" text="para REINICIAR este voto" textFill="#5c5c5c">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="buttonConfirma" layoutX="1013.0" layoutY="465.0" mnemonicParsing="false" onAction="#mouseEventConfirma" prefHeight="50.0" prefWidth="80.0" style="-fx-background-color: #20d608;" text="CONFIRMA">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="buttonCorrige" layoutX="913.0" layoutY="465.0" mnemonicParsing="false" onAction="#mouseEventCorrige" prefHeight="50.0" prefWidth="80.0" style="-fx-background-color: #ff7d0c;" text="CORRIGE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="buttonBranco" layoutX="813.0" layoutY="465.0" mnemonicParsing="false" onAction="#mouseEventBranco" prefHeight="50.0" prefWidth="80.0" text="BRANCO">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </Button>
+                  <Label layoutX="45.0" layoutY="330.0" text="Partido:" textFill="#5c5c5c">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="45.0" layoutY="380.0" text="Vice - Presidente:" textFill="#5c5c5c">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="200.0" layoutY="380.0" text="Nome do Vice">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="125.0" layoutY="330.0" text="Nome do Partido">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="buttonOne" alignment="TOP_LEFT" layoutX="813.0" layoutY="130.0" mnemonicParsing="false" onAction="#mouseEventOne" prefHeight="50.0" prefWidth="80.0" style="-fx-background-color: #303030;" text="1" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="buttonTwo" alignment="TOP_LEFT" layoutX="913.0" layoutY="130.0" mnemonicParsing="false" onAction="#mouseEventTwo" prefHeight="50.0" prefWidth="80.0" style="-fx-background-color: #303030;" text="2" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="buttonThree" alignment="TOP_LEFT" layoutX="1013.0" layoutY="130.0" mnemonicParsing="false" onAction="#mouseEventThree" prefHeight="50.0" prefWidth="80.0" style="-fx-background-color: #303030;" text="3" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="buttonFour" alignment="TOP_LEFT" layoutX="813.0" layoutY="215.0" mnemonicParsing="false" onAction="#mouseEventFour" prefHeight="50.0" prefWidth="80.0" style="-fx-background-color: #303030;" text="4" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="buttonFive" alignment="TOP_LEFT" layoutX="913.0" layoutY="215.0" mnemonicParsing="false" onAction="#mouseEventFive" prefHeight="50.0" prefWidth="80.0" style="-fx-background-color: #303030;" text="5" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="buttonSix" alignment="TOP_LEFT" layoutX="1013.0" layoutY="215.0" mnemonicParsing="false" onAction="#mouseEventSix" prefHeight="50.0" prefWidth="80.0" style="-fx-background-color: #303030;" text="6" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="buttonSeven" alignment="TOP_LEFT" layoutX="813.0" layoutY="300.0" mnemonicParsing="false" onAction="#mouseEventSeven" prefHeight="50.0" prefWidth="80.0" style="-fx-background-color: #303030;" text="7" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="buttonEight" alignment="TOP_LEFT" layoutX="913.0" layoutY="300.0" mnemonicParsing="false" onAction="#mouseEventEight" prefHeight="50.0" prefWidth="80.0" style="-fx-background-color: #303030;" text="8" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="buttonNine" alignment="TOP_LEFT" layoutX="1013.0" layoutY="300.0" mnemonicParsing="false" onAction="#mouseEventNine" prefHeight="50.0" prefWidth="80.0" style="-fx-background-color: #303030;" text="9" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="buttonZero" alignment="TOP_LEFT" layoutX="913.0" layoutY="380.0" mnemonicParsing="false" onAction="#mouseEventZero" prefHeight="50.0" prefWidth="80.0" style="-fx-background-color: #303030;" text="0" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Button>
+                  <Label alignment="TOP_CENTER" layoutX="868.0" layoutY="45.0" prefHeight="28.0" prefWidth="171.0" text="JUSTIÇA ELEITORAL" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="180.0" layoutY="60.0" text="Victor Tanabe">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="1140.0" layoutY="130.0" rotate="-90.0" text="ID: 0x14d5790" textFill="#5c5c5c">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

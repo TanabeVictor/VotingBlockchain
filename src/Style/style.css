@@ -1,0 +1,90 @@
+#sidebar{
+    -fx-background-color: #1d1d1e;
+    
+}
+
+#menubar{
+    -fx-background-color: #1d1d1e;
+    -fx-background-radius: 10;
+    
+}
+
+#loginLabel{
+    -fx-background-color: #1d1d1e;
+    -fx-background-radius: 50;
+}
+
+#buttonSignIn{
+    -fx-background-color: #ff7d0c;
+}
+
+#topBar{
+    -fx-background-color: #ff7d0c;
+}
+
+#labelView{
+	-fx-border-width: 0 0 1 0;
+	-fx-border-color: #4300c9;
+}
+
+#signUpButton{
+	font-family: 'Roboto';
+       -fx-background-color: #FFFFFF;	
+	-fx-background-radius: 0;
+}
+
+#buttonPrint{
+	-fx-background-radius: 10;
+	-fx-background-color: #ff7d0c;
+}
+
+#fieldLogin{
+	-fx-border-width: 0 0 1 0;
+	-fx-border-color: #262626;	
+}
+
+.check-box .box {
+	-fx-background-color: white;
+	-fx-border-color:grey;
+	-fx-border-radius:3px; 
+}
+
+.check-box:selected .mark {
+	-fx-background-color: white;
+}
+
+.check-box:selected .box {
+	-fx-background-color: #ff6a00;
+}
+
+#buttonLogin{
+	-fx-background-color: transparent;
+        -fx-border-color: 
+        linear-gradient(from 0% 93% to 0% 100%, #a34313 0%, #903b12 100%),
+        #9d4024,
+        #d86e3a,
+        radial-gradient(center 50% 50%, radius 100%, #d86e3a, #c54e2c);
+        -fx-border-radius: 5;
+        -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );
+}
+
+#buttonLearn{
+	-fx-background-color: transparent;
+	-fx-border-color: 
+        linear-gradient(from 0% 93% to 0% 100%, #a34313 0%, #903b12 100%),
+        #9d4024,
+        #d86e3a,
+        radial-gradient(center 50% 50%, radius 100%, #d86e3a, #c54e2c);
+        -fx-border-radius: 5;
+        -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );
+}
+
+#signInText{
+	-fx-border-width: 0 0 1 0;
+	-fx-border-color: #ff6a00;
+	-fx-padding: 5;
+}
+
+#signInText2{
+	-fx-padding: 5;
+}
