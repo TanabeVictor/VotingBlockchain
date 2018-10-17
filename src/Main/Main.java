@@ -23,7 +23,7 @@ public class Main extends Application {
     
     @Override
     public void start(Stage primaryStage) throws Exception{
-        cadCandidato =  new cadastroCandidato();
+        //cadCandidato =  new cadastroCandidato();
         stage = primaryStage;
         
         primaryStage.setTitle("VotingBlockchain - E - Voting Blockchain System ");

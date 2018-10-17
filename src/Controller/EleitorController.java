@@ -1,7 +1,7 @@
 package Controller;
 
-import java.util.Vector;
 import Model.Eleitor;
+import java.util.Vector;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -11,23 +11,21 @@ import java.io.ObjectOutputStream;
 public class EleitorController {
     
     private Vector listaEleitores = new Vector();
-    private final String arquivo = "eleitores.dat";
+    private final String arquivo = "eleitores.txt";
     
     public void addEleitor(Eleitor eleitor) throws Exception {
         listaEleitores.add(eleitor);
         gravaLista();}
-
-    public Eleitor retornaEleitor(String matricula, int senha) {
-        Eleitor aux = new Eleitor();
-        for (int i = 0; i < listaEleitores.size(); i++) {
-            aux = (Eleitor) listaEleitores.elementAt(i);
-            if ((aux.getCPF() == matricula) && (aux.getSenha() == senha)) {
-               return aux;
-            }
-        }
-        return null;
-    }
-
+    
+    
+    public Eleitor retornaCandidato(String matricula, int senha) {
+        Eleitor objEleitor = null;
+        for (int intIdx = 0; intIdx < listaEleitores.size(); intIdx++) {
+        objEleitor = (Eleitor)listaEleitores.elementAt(intIdx);
+        if ((objEleitor.getCPF() == matricula) && (objEleitor.getSenha() == senha))
+        return objEleitor;}
+        return null;}
+    
     public void gravaLista() throws Exception {
         FileOutputStream objFileOS = new FileOutputStream(arquivo);
         ObjectOutputStream objOS = new ObjectOutputStream(objFileOS);
@@ -35,6 +33,7 @@ public class EleitorController {
         objOS.flush();
         objOS.close();}
 
+    
     public void recuperaLista() throws Exception {
         File objFile = new File(arquivo);
         if (objFile.exists()) {
