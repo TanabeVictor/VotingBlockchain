@@ -18,7 +18,8 @@ public class Main extends Application {
     private static Stage stage;
     private static Scene mainScene;
     private static Scene profileScene;
-    private static Scene votingScene;    
+    private static Scene votingScene; 
+    private static Scene confirmaScene;      
     cadastroCandidato cadCandidato;
     
     @Override
@@ -36,6 +37,9 @@ public class Main extends Application {
         
         Parent fxmlVoting = FXMLLoader.load(getClass().getResource("/View/Principal.fxml"));
         votingScene = new Scene(fxmlVoting, 1200, 600);
+        
+        Parent fxmlConfirma = FXMLLoader.load(getClass().getResource("/View/Confirma.fxml"));
+        confirmaScene = new Scene(fxmlVoting, 1200, 600);
         
         primaryStage.setScene(mainScene);
         primaryStage.show();
@@ -55,6 +59,9 @@ public class Main extends Application {
                 
             case "voting":
                 stage.setScene(votingScene);
+                break;      
+            case "confirm":
+                stage.setScene(confirmaScene);
                 break;       
         }
     }

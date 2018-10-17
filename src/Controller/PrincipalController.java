@@ -1,5 +1,6 @@
 package Controller;
 
+import Main.Main;
 import Model.Candidato;
 import java.io.File;
 import java.net.URL;
@@ -18,6 +19,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
 import javax.swing.JOptionPane;
 
@@ -93,7 +96,7 @@ public class PrincipalController implements Initializable {
         public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
         String numeroInformado = labelVoto.getText();
         if(numeroInformado.length() < 2){
-            File file = new File("src/Img/Presidenciaveis/Default.jpg");
+            File file = new File("src/Img/Presidenciaveis/default.jpg");
             Image image = new Image(file.toURI().toString());
             
             labelNomeCandidato.setText("Nome do Candidato");
@@ -195,6 +198,11 @@ public class PrincipalController implements Initializable {
 
     @FXML
     private void mouseEventConfirma(ActionEvent event) {
+        String musicFile = "confirma-urna.mp3";
+        Media sound = new Media(new File(musicFile).toURI().toString());
+        MediaPlayer mediaPlayer = new MediaPlayer(sound);
+        mediaPlayer.play();
+        Main.changeScreen("confirm");
     }
 
     @FXML
@@ -204,6 +212,7 @@ public class PrincipalController implements Initializable {
 
     @FXML
     private void mouseEventBranco(ActionEvent event) {
+        
     }
 
 }
