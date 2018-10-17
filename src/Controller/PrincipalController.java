@@ -1,12 +1,11 @@
 package Controller;
 
 import Model.Candidato;
+import java.io.File;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.beans.value.ChangeListener;
@@ -17,7 +16,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.input.InputMethodEvent;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.util.Duration;
 import javax.swing.JOptionPane;
 
@@ -69,6 +69,10 @@ public class PrincipalController implements Initializable {
     private Label labelNomePartido;
     
     CandidatoController ctrCandidato = new CandidatoController();
+    @FXML
+    private ImageView imagePresidente;
+    @FXML
+    private ImageView imageVice;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -89,14 +93,27 @@ public class PrincipalController implements Initializable {
         public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
         String numeroInformado = labelVoto.getText();
         if(numeroInformado.length() < 2){
+            File file = new File("src/Img/Presidenciaveis/Default.jpg");
+            Image image = new Image(file.toURI().toString());
+            
             labelNomeCandidato.setText("Nome do Candidato");
             labelNomeVice.setText("Nome do Vice");
-            labelNomePartido.setText("Nome do Partido");}
+            labelNomePartido.setText("Nome do Partido");
+            imagePresidente.setImage(image);
+            imageVice.setImage(image);}
         try {
             Candidato cand = ctrCandidato.retornaCandidato(Integer.parseInt(numeroInformado));
+            File file = new File("src/Img/Presidenciaveis/"+cand.getNomeImagem()+".jpg");
+            File file2 = new File("src/Img/Vices/"+cand.getNomeImagemVice()+".jpg");
+            Image image = new Image(file.toURI().toString());
+            Image image2 = new Image(file2.toURI().toString());
+            
             labelNomeCandidato.setText(cand.getNomeCandidato());
             labelNomeVice.setText(cand.getNomeVice());
             labelNomePartido.setText(cand.getPartido());
+            imagePresidente.setImage(image);
+            imageVice.setImage(image2);
+            
         } catch (Exception ex) {
             System.out.println("");}
         }});
@@ -189,7 +206,4 @@ public class PrincipalController implements Initializable {
     private void mouseEventBranco(ActionEvent event) {
     }
 
-    @FXML
-    private void insercaoVotoLabel(InputMethodEvent event) {
-    }
 }

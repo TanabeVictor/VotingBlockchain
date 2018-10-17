@@ -229,6 +229,8 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
+                  <ImageView fx:id="imagePresidente" fitHeight="180.0" fitWidth="155.0" layoutX="445.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imageVice" fitHeight="180.0" fitWidth="155.0" layoutX="445.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </Pane>
          </children>
