@@ -54,7 +54,7 @@ public class PerfilController implements Initializable {
 
     Eleitor eleitor = null;
     EleitorController verificador = new EleitorController();
-    SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
+    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
     @FXML
     private ImageView imageProfile;
 

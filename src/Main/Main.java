@@ -5,7 +5,6 @@
  */
 package Main;
 
-import Controller.Configurador;
 import Model.Eleitor;
 import Model.cadastroCandidato;
 import Model.cadastroEleitor;

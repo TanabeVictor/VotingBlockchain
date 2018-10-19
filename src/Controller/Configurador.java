@@ -5,6 +5,7 @@
  */
 package Controller;
 
+import Model.Voto;
 import com.pubnub.api.*;
 import com.pubnub.api.callbacks.PNCallback;
 import com.pubnub.api.models.consumer.PNPublishResult;
@@ -28,7 +29,7 @@ public class Configurador {
         pubnub = new PubNub(pnConfiguration);
     }
 
-    public void publish(String voto) {
+    public void publish(Voto voto) {
         try {
             pubnub.publish().channel(kChannel).message(voto).async(new PNCallback<PNPublishResult>() {
                 @Override

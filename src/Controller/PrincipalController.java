@@ -6,6 +6,8 @@ import Model.Eleitor;
 import Model.Voto;
 import java.io.File;
 import java.net.URL;
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -39,7 +41,10 @@ public class PrincipalController implements Initializable {
 
     @FXML
     private Label hora;
+
     private SimpleDateFormat formatador = new SimpleDateFormat("HH:mm:ss");
+    private SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
+
     @FXML
     private Button buttonConfirma;
     @FXML
@@ -166,7 +171,6 @@ public class PrincipalController implements Initializable {
     }
 
     public void exibeData() {
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
         Calendar calendar = new GregorianCalendar();
         Date date = new Date();
         calendar.setTime(date);
@@ -230,22 +234,27 @@ public class PrincipalController implements Initializable {
     }
 
     @FXML
-    private void mouseEventConfirma(ActionEvent event) {
+    private void mouseEventConfirma(ActionEvent event) throws ParseException, Exception {
         String musicFile = "confirma-urna.mp3";
         Media sound = new Media(new File(musicFile).toURI().toString());
         MediaPlayer mediaPlayer = new MediaPlayer(sound);
         mediaPlayer.play();
         Random random = new Random();
-        int matricula = eleitor.getUserID();
         int nroVoto = random.nextInt(99999);
         int idCandidato = Integer.parseInt(labelVoto.getText());
         int nroEleitor = eleitor.getUserID();
-        int codLocal = 035;
+        int codLocal = 35;
         int codEleicao = 20180110;
         String localizacao = labelLocalizacao.getText();
-        String IDAparelho  = labelIDAparelho.getText();
-        //ctrVoto.addVoto(new Voto( ));
-        //config.publish("Teste de Comunicação");
+        String IDAparelho = labelIDAparelho.getText();
+
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+        Date date = new Date();
+        dateFormat.format(date);
+
+        config.publish(new Voto(nroVoto, idCandidato, nroEleitor, codLocal, codEleicao, date, localizacao, IDAparelho));
+
+        ctrVoto.addVoto(new Voto(nroVoto, idCandidato, nroEleitor, codLocal, codEleicao, date, localizacao, IDAparelho));
         Main.changeScreen("confirm");
     }
 
