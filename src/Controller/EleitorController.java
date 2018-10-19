@@ -18,12 +18,12 @@ public class EleitorController {
         gravaLista();}
     
     
-    public Eleitor retornaCandidato(String matricula, int senha) {
+    public Eleitor retornaEleitor(int matricula, String senha) {
         Eleitor objEleitor = null;
         for (int intIdx = 0; intIdx < listaEleitores.size(); intIdx++) {
         objEleitor = (Eleitor)listaEleitores.elementAt(intIdx);
-        if ((objEleitor.getCPF() == matricula) && (objEleitor.getSenha() == senha))
-        return objEleitor;}
+        if ((objEleitor.getUserID() == matricula) && (objEleitor.getSenha().equals(senha))){
+        return objEleitor;}}
         return null;}
     
     public void gravaLista() throws Exception {

@@ -2,6 +2,7 @@ package Controller;
 
 import Main.Main;
 import Model.Candidato;
+import Model.Eleitor;
 import java.io.File;
 import java.net.URL;
 import java.text.SimpleDateFormat;
@@ -70,57 +71,77 @@ public class PrincipalController implements Initializable {
     private Label labelNomeVice;
     @FXML
     private Label labelNomePartido;
-    
+
     CandidatoController ctrCandidato = new CandidatoController();
     @FXML
     private ImageView imagePresidente;
     @FXML
     private ImageView imageVice;
-    
+    Configurador config = new Configurador();
+    Eleitor eleitor = null;
+    @FXML
+    private Label labelLocalizacao;
+    @FXML
+    private Label labelNome;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        try {
-            ctrCandidato.recuperaLista();
-        } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Erro ao Recuperar Lista de Candidatos!");}
-        
-        KeyFrame frame = new KeyFrame(Duration.millis(1000), e -> atualizaHoras());
-        Timeline timeline = new Timeline(frame);
-        timeline.setCycleCount(Timeline.INDEFINITE);
-        timeline.play();
-        
-        addTextLimiter(labelVoto);
-       
-        labelVoto.textProperty().addListener(new ChangeListener<String>() {
-        @Override
-        public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-        String numeroInformado = labelVoto.getText();
-        if(numeroInformado.length() < 2){
-            File file = new File("src/Img/Presidenciaveis/default.jpg");
-            Image image = new Image(file.toURI().toString());
-            
-            labelNomeCandidato.setText("Nome do Candidato");
-            labelNomeVice.setText("Nome do Vice");
-            labelNomePartido.setText("Nome do Partido");
-            imagePresidente.setImage(image);
-            imageVice.setImage(image);}
-        try {
-            Candidato cand = ctrCandidato.retornaCandidato(Integer.parseInt(numeroInformado));
-            File file = new File("src/Img/Presidenciaveis/"+cand.getNomeImagem()+".jpg");
-            File file2 = new File("src/Img/Vices/"+cand.getNomeImagemVice()+".jpg");
-            Image image = new Image(file.toURI().toString());
-            Image image2 = new Image(file2.toURI().toString());
-            
-            labelNomeCandidato.setText(cand.getNomeCandidato());
-            labelNomeVice.setText(cand.getNomeVice());
-            labelNomePartido.setText(cand.getPartido());
-            imagePresidente.setImage(image);
-            imageVice.setImage(image2);
-            
-        } catch (Exception ex) {
-            System.out.println("");}
-        }});
-        exibeData();
+        Main.addOnChangeScreenListener(new Main.OnChangeScreen() {
+            @Override
+            public void onScreenChanged(String newScreen, Eleitor objEleitor) {
+                if (newScreen.equals("voting")) {
+                    labelNome.setText(objEleitor.getNomeEleitor());
+                    try {
+                        ctrCandidato.recuperaLista();
+                    } catch (Exception ex) {
+                        JOptionPane.showMessageDialog(null, "Erro ao Recuperar Lista de Candidatos!");
+                    }
+
+                    KeyFrame frame = new KeyFrame(Duration.millis(1000), e -> atualizaHoras());
+                    Timeline timeline = new Timeline(frame);
+                    timeline.setCycleCount(Timeline.INDEFINITE);
+                    timeline.play();
+
+                    addTextLimiter(labelVoto);
+
+                    labelVoto.textProperty().addListener(new ChangeListener<String>() {
+                        @Override
+                        public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                            String numeroInformado = labelVoto.getText();
+                            if (numeroInformado.length() < 2) {
+                                File file = new File("src/Img/Presidenciaveis/default.jpg");
+                                Image image = new Image(file.toURI().toString());
+
+                                labelNomeCandidato.setText("Nome do Candidato");
+                                labelNomeVice.setText("Nome do Vice");
+                                labelNomePartido.setText("Nome do Partido");
+                                imagePresidente.setImage(image);
+                                imageVice.setImage(image);
+                            }
+                            try {
+                                Candidato cand = ctrCandidato.retornaCandidato(Integer.parseInt(numeroInformado));
+                                File file = new File("src/Img/Presidenciaveis/" + cand.getNomeImagem() + ".jpg");
+                                File file2 = new File("src/Img/Vices/" + cand.getNomeImagemVice() + ".jpg");
+                                Image image = new Image(file.toURI().toString());
+                                Image image2 = new Image(file2.toURI().toString());
+
+                                labelNomeCandidato.setText(cand.getNomeCandidato());
+                                labelNomeVice.setText(cand.getNomeVice());
+                                labelNomePartido.setText(cand.getPartido());
+                                imagePresidente.setImage(image);
+                                imageVice.setImage(image2);
+                            } catch (Exception ex) {
+
+                            }
+                        }
+                    });
+                    exibeData();
+                    eleitor = objEleitor;
+                }
+            }
+
+        });
+
     }
 
     public static void addTextLimiter(final TextField tf) {
@@ -135,10 +156,10 @@ public class PrincipalController implements Initializable {
             }
         });
     }
-    
-    public void exibeData(){
-    SimpleDateFormat dateFormat = new SimpleDateFormat("dd-mm-yy");
-    data.setText("03/10/2018");
+
+    public void exibeData() {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-mm-yy");
+        data.setText("03/10/2018");
     }
 
     private void atualizaHoras() {
@@ -202,6 +223,10 @@ public class PrincipalController implements Initializable {
         Media sound = new Media(new File(musicFile).toURI().toString());
         MediaPlayer mediaPlayer = new MediaPlayer(sound);
         mediaPlayer.play();
+
+        int matricula = eleitor.getUserID();
+
+        //config.publish("Teste de Comunicação");
         Main.changeScreen("confirm");
     }
 
@@ -212,7 +237,7 @@ public class PrincipalController implements Initializable {
 
     @FXML
     private void mouseEventBranco(ActionEvent event) {
-        
+
     }
 
 }

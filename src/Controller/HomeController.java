@@ -1,6 +1,7 @@
 package Controller;
 
 import Main.Main;
+import Model.Eleitor;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -10,7 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-
+import javax.swing.JOptionPane;
 
 public class HomeController implements Initializable {
 
@@ -23,25 +24,49 @@ public class HomeController implements Initializable {
     @FXML
     private CheckBox rememberCheckbox;
 
-    //EleitorController verificador = new EleitorController();
-    
+    EleitorController verificador = new EleitorController();
+    Eleitor objEleitor = null;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
+        try {
+            verificador.recuperaLista();
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Erro ao Recuperar Lista de Eleitores!");
+        }
 
-   
+        Main.addOnChangeScreenListener(new Main.OnChangeScreen() {
+            @Override
+            public void onScreenChanged(String newScreen, Eleitor objEleitor) {
+                if (newScreen.equals("main")) {
+                    try {
+                        verificador.recuperaLista();
+                    } catch (Exception ex) {
+                        JOptionPane.showMessageDialog(null, "Erro ao Recuperar Lista de Eleitores!");
+                    }
+                }
+            }
+        });
+
+    }
+
     @FXML
     private void loginAction(ActionEvent event) {
-        //String user = userLabel.getText();
-        //String password = passwordLabel.getText();
-        //int senha = Integer.parseInt(password);
-        //verificador.retornaEleitor(user, senha);
-        Main.changeScreen("profile");
+        int matricula = Integer.parseInt(userLabel.getText());
+        String password = passwordLabel.getText();
+        objEleitor = verificador.retornaEleitor(matricula, password);
+        if (objEleitor != null) {
+            userLabel.setText("");
+            passwordLabel.setText("");
+            Main.changeScreen("profile", objEleitor);
+        } else {
+            JOptionPane.showMessageDialog(null, "Usuário Não Cadastrado");
+        }
+
     }
 
     @FXML
     private void checkboxAction(ActionEvent event) {
     }
-   
+
 }

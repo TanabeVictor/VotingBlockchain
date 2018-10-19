@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class Voto {
     String  localizacao, idAparelho;
-    int  nroVoto, idCandidato, codLocal, codEleicao;
+    int  nroVoto, idCandidato, codLocal, codEleicao, nroEleitor;
     Date data, hora;
     
     public void setLocalizacao(String localizacao){
@@ -18,6 +18,10 @@ public class Voto {
     
     public void setNroVoto(int nroVoto){
     this.nroVoto = nroVoto;
+    }
+    
+    public void setNroEleitor(int nroEleitor){
+    this.nroEleitor = nroEleitor;
     }
     
     public void setIdCandidato(int idCandidato){
@@ -50,6 +54,10 @@ public class Voto {
     
     public int getNroVoto(){
     return this.nroVoto;
+    }
+    
+    public int getNroEleitor(){
+    return this.nroEleitor;
     }
     
     public int getIdCandidato(){

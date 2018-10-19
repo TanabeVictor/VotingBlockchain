@@ -4,35 +4,37 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class Eleitor implements Serializable{
-    int userID, senha;
-    String nomeEleitor, endereco, cpf, sexo, naturalidade;
-    Date dataNasc;
+    int userID;
+    String nomeEleitor, nomePai, nomeMae, sexo, naturalidade, situacao, senha;
+    Date dataNasc, dataEmissao;
     
-    public Eleitor(String nomeEleitor, String endereco, String cpf, String sexo, String naturalidade, int userID, int senha, Date dataNasc) throws Exception {
+    public Eleitor(String nomeEleitor, String nomePai, String nomeMae, String sexo, String naturalidade, int userID, String senha, Date dataNasc, Date dataEmissao, String situacao) throws Exception {
         this.nomeEleitor = nomeEleitor;
-        this.endereco = endereco;
-        this.cpf = cpf;
+        this.nomePai = nomePai;
+        this.nomeMae = nomeMae;
         this.sexo = sexo;
         this.naturalidade = naturalidade;
         this.userID = userID;
         this.senha = senha;
         this.dataNasc = dataNasc;
+        this.dataEmissao = dataEmissao;
+        this.situacao = situacao;
     }
 
-    public Eleitor() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
     public void setNomeEleitor(String nomeEleitor){
     this.nomeEleitor = nomeEleitor;
     }
     
-    public void setEndereco(String endereco){
-    this.endereco = endereco;
+    public void setNomePai(String nomePai){
+    this.nomePai = nomePai;
     }
     
-    public void setCPF(String cpf){
-    this.cpf = cpf;
+    public void setNomeMae(String nomeMae){
+    this.nomeMae = nomeMae;
+    }
+    
+    public void setSituacao(String situacao){
+    this.situacao = situacao;
     }
     
     public void setSexo(String sexo){
@@ -47,7 +49,7 @@ public class Eleitor implements Serializable{
     this.userID = userID;
     }
     
-    public void setSenha(int senha){
+    public void setSenha(String senha){
     this.senha = senha;
     }
     
@@ -55,17 +57,25 @@ public class Eleitor implements Serializable{
     this.dataNasc = dataNasc;
     }
     
+    public void setDataEmissao(Date dataEmissao){
+    this.dataEmissao = dataEmissao;
+    }
+    
     public String getNomeEleitor(){
     return this.nomeEleitor;
     }
     
-    public String getEndereco(){
-    return this.endereco;
+    public String getNomePai(){
+    return this.nomePai;
     }
     
-    public String getCPF(){
-    return this.cpf;
+    public String getNomeMae(){
+    return this.nomeMae;
     }
+    
+    public String getSituacao(){
+    return this.situacao;
+    } 
     
     public String getSexo(){
     return this.sexo;
@@ -79,11 +89,15 @@ public class Eleitor implements Serializable{
     return this.userID;
     }
     
-    public int getSenha(){
+    public String getSenha(){
     return this.senha;
     }
     
     public Date getDataNasc(){
     return this.dataNasc;
+    }
+    
+    public Date getDataEmissao(){
+    return this.dataEmissao;
     }
 }

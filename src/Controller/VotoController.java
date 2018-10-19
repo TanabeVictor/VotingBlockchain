@@ -1,6 +1,6 @@
 package Controller;
 
-import Model.Candidato;
+import Model.Voto;
 import java.util.Vector;
 import java.io.File;
 import java.io.FileInputStream;
@@ -8,22 +8,22 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-public class CandidatoController {
+public class VotoController {
 
-    private Vector listaCandidatos = new Vector();
-    private final String arquivo = "candidatos.txt";
+    private Vector listaVotos = new Vector();
+    private final String arquivo = "votos.txt";
 
-    public void addCandidato(Candidato candidato) throws Exception {
-        listaCandidatos.add(candidato);
+    public void addVoto(Voto voto) throws Exception {
+        listaVotos.add(voto);
         gravaLista();
     }
 
-    public Candidato retornaCandidato(int valorCodigo) {
-        Candidato objCandidato = null;
-        for (int intIdx = 0; intIdx < listaCandidatos.size(); intIdx++) {
-            objCandidato = (Candidato) listaCandidatos.elementAt(intIdx);
-            if (objCandidato.getCodigo() == valorCodigo) {
-                return objCandidato;
+    public Voto retornaVoto(int matricula) {
+        Voto objVoto = null;
+        for (int intIdx = 0; intIdx < listaVotos.size(); intIdx++) {
+            objVoto = (Voto) listaVotos.elementAt(intIdx);
+            if ((objVoto.getNroEleitor() == matricula)) {
+                return objVoto;
             }
         }
         return null;
@@ -32,7 +32,7 @@ public class CandidatoController {
     public void gravaLista() throws Exception {
         FileOutputStream objFileOS = new FileOutputStream(arquivo);
         ObjectOutputStream objOS = new ObjectOutputStream(objFileOS);
-        objOS.writeObject(listaCandidatos);
+        objOS.writeObject(listaVotos);
         objOS.flush();
         objOS.close();
     }
@@ -42,7 +42,7 @@ public class CandidatoController {
         if (objFile.exists()) {
             FileInputStream objFileIS = new FileInputStream(arquivo);
             ObjectInputStream objIS = new ObjectInputStream(objFileIS);
-            listaCandidatos = (Vector) objIS.readObject();
+            listaVotos = (Vector) objIS.readObject();
             objIS.close();
         }
     }
