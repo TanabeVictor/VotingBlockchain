@@ -8,6 +8,18 @@ public class Voto {
     int  nroVoto, idCandidato, codLocal, codEleicao, nroEleitor;
     Date data, hora;
     
+    public Voto(int nroVoto, int idCandidato, int nroEleitor, int codLocal, int codEleicao, Date data, Date hora, String localizacao, String idAparelho){
+    this.nroVoto = nroVoto;
+    this.idCandidato = idCandidato;
+    this.nroEleitor = nroEleitor;
+    this.codLocal = codLocal;
+    this.codEleicao = codEleicao;
+    this.data = data;
+    this.hora = hora;
+    this.localizacao = localizacao;
+    this.idAparelho = idAparelho;
+    }
+    
     public void setLocalizacao(String localizacao){
     this.localizacao = localizacao;
     }

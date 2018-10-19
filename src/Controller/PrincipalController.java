@@ -3,10 +3,15 @@ package Controller;
 import Main.Main;
 import Model.Candidato;
 import Model.Eleitor;
+import Model.Voto;
 import java.io.File;
 import java.net.URL;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.Locale;
+import java.util.Random;
 import java.util.ResourceBundle;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -71,6 +76,7 @@ public class PrincipalController implements Initializable {
     private Label labelNomeVice;
     @FXML
     private Label labelNomePartido;
+    VotoController ctrVoto = new VotoController();
 
     CandidatoController ctrCandidato = new CandidatoController();
     @FXML
@@ -83,6 +89,8 @@ public class PrincipalController implements Initializable {
     private Label labelLocalizacao;
     @FXML
     private Label labelNome;
+    @FXML
+    private Label labelIDAparelho;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -158,8 +166,12 @@ public class PrincipalController implements Initializable {
     }
 
     public void exibeData() {
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-mm-yy");
-        data.setText("03/10/2018");
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
+        Calendar calendar = new GregorianCalendar();
+        Date date = new Date();
+        calendar.setTime(date);
+        String dataAgora = formatter.format(date);
+        data.setText(dataAgora);
     }
 
     private void atualizaHoras() {
@@ -223,9 +235,16 @@ public class PrincipalController implements Initializable {
         Media sound = new Media(new File(musicFile).toURI().toString());
         MediaPlayer mediaPlayer = new MediaPlayer(sound);
         mediaPlayer.play();
-
+        Random random = new Random();
         int matricula = eleitor.getUserID();
-
+        int nroVoto = random.nextInt(99999);
+        int idCandidato = Integer.parseInt(labelVoto.getText());
+        int nroEleitor = eleitor.getUserID();
+        int codLocal = 035;
+        int codEleicao = 20180110;
+        String localizacao = labelLocalizacao.getText();
+        String IDAparelho  = labelIDAparelho.getText();
+        //ctrVoto.addVoto(new Voto( ));
         //config.publish("Teste de Comunicação");
         Main.changeScreen("confirm");
     }
