@@ -87,7 +87,6 @@ public class Main extends Application {
         changeScreen(scr, null);
     }
 
-    /*---------------------*/
     public static void main(String[] args) throws Exception {
         launch(args);
     }

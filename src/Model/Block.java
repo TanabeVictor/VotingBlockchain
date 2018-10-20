@@ -1,37 +1,36 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Model;
 
 import java.util.Date;
 
-public class Bloco {
+public class Block {
 
-    public String hash;
-    public String previousHash;
-    private String data; //our data will be a simple message.
+    public  String hash;
+    public  String previousHash;
+    private Voto data; //our data will be a simple message.
     private long timeStamp; //as number of milliseconds since 1/1/1970.
     private int nonce;
 
     //Block Constructor.  
-    public Bloco(String data, String previousHash) {
+    public Block(Voto data, String previousHash) {
         this.data = data;
         this.previousHash = previousHash;
         this.timeStamp = new Date().getTime();
-        this.hash = calculateHash(); //Making sure we do this after we set the other values.
-    }
+        this.hash = calculateHash();}
 
     //Calculate new hash based on blocks contents
     public String calculateHash() {
-        String calculatedhash = Util.applySha256(
-                previousHash
-                + Long.toString(timeStamp)
-                + Integer.toString(nonce)
-                + data
-        );
+        String calculatedhash = StringUtil.applySha256(previousHash + Long.toString(timeStamp) + Integer.toString(nonce) + data);
         return calculatedhash;
     }
 
     //Increases nonce value until hash target is reached.
     public void mineBlock(int difficulty) {
-        String target = Util.getDificultyString(difficulty); //Create a string with difficulty * "0" 
+        String target = StringUtil.getDificultyString(difficulty); //Create a string with difficulty * "0" 
         while (!hash.substring(0, difficulty).equals(target)) {
             nonce++;
             hash = calculateHash();

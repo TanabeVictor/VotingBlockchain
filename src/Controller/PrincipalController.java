@@ -1,6 +1,7 @@
 package Controller;
 
 import Main.Main;
+import Model.Block;
 import Model.Candidato;
 import Model.Eleitor;
 import Model.Voto;
@@ -32,17 +33,15 @@ import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
 import javax.swing.JOptionPane;
 
-/**
- * FXML Controller class
- *
- * @author vitau
- */
 public class PrincipalController implements Initializable {
 
     @FXML
     private Label hora;
 
+    public static int difficulty = 5;
+
     private SimpleDateFormat formatador = new SimpleDateFormat("HH:mm:ss");
+
     private SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
 
     @FXML
@@ -96,6 +95,8 @@ public class PrincipalController implements Initializable {
     private Label labelNome;
     @FXML
     private Label labelIDAparelho;
+
+    Block block = null;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -252,9 +253,10 @@ public class PrincipalController implements Initializable {
         Date date = new Date();
         dateFormat.format(date);
 
-        config.publish(new Voto(nroVoto, idCandidato, nroEleitor, codLocal, codEleicao, date, localizacao, IDAparelho));
-
+        block = new Block(new Voto(nroVoto, idCandidato, nroEleitor, codLocal, codEleicao, date, localizacao, IDAparelho), "0");
+        config.publish(block);
         ctrVoto.addVoto(new Voto(nroVoto, idCandidato, nroEleitor, codLocal, codEleicao, date, localizacao, IDAparelho));
+
         Main.changeScreen("confirm");
     }
 
