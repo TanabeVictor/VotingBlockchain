@@ -6,10 +6,10 @@ import java.util.Date;
 public class Eleitor implements Serializable {
 
     int userID;
-    String nomeEleitor, nomePai, nomeMae, sexo, naturalidade, situacao, senha;
+    String nomeEleitor, nomePai, nomeMae, sexo, naturalidade, situacao, senha, email;
     Date dataNasc, dataEmissao;
 
-    public Eleitor(String nomeEleitor, String nomePai, String nomeMae, String sexo, String naturalidade, int userID, String senha, Date dataNasc, Date dataEmissao, String situacao) throws Exception {
+    public Eleitor(String nomeEleitor, String nomePai, String nomeMae, String sexo, String naturalidade, int userID, String senha, Date dataNasc, Date dataEmissao, String situacao, String email) throws Exception {
         this.nomeEleitor = nomeEleitor;
         this.nomePai = nomePai;
         this.nomeMae = nomeMae;
@@ -20,6 +20,7 @@ public class Eleitor implements Serializable {
         this.dataNasc = dataNasc;
         this.dataEmissao = dataEmissao;
         this.situacao = situacao;
+        this.email = email;
     }
 
     public void setNomeEleitor(String nomeEleitor) {
@@ -40,8 +41,12 @@ public class Eleitor implements Serializable {
 
     public void setSexo(String sexo) {
         this.sexo = sexo;
+    }   
+    
+    public void setEmail(String email) {
+        this.email = email;
     }
-
+    
     public void setNaturalidade(String naturalidade) {
         this.naturalidade = naturalidade;
     }
@@ -80,6 +85,10 @@ public class Eleitor implements Serializable {
 
     public String getSexo() {
         return this.sexo;
+    }
+    
+     public String getEmail() {
+        return this.email;
     }
 
     public String getNaturalidade() {

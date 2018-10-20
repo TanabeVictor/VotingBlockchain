@@ -36,7 +36,9 @@ public class cadastroEleitor {
         Date dataEmissao = formatter.parse(dataEmissaoLabel);
 
         String situacao = JOptionPane.showInputDialog(null, "Digite a Situação do Eleitor");
+        
+        String email = JOptionPane.showInputDialog(null, "Digite o Email do Eleitor");
 
-        ctr.addEleitor(new Eleitor(nomeEleitor, nomePai, nomeMae, sexo, naturalidade, userID, senha, dataNasc, dataEmissao, situacao));
+        ctr.addEleitor(new Eleitor(nomeEleitor, nomePai, nomeMae, sexo, naturalidade, userID, senha, dataNasc, dataEmissao, situacao, email));
     }
 }

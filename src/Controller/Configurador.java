@@ -1,12 +1,6 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Controller;
 
 import Model.Block;
-import Model.Voto;
 import com.pubnub.api.*;
 import com.pubnub.api.callbacks.PNCallback;
 import com.pubnub.api.models.consumer.PNPublishResult;
@@ -30,9 +24,9 @@ public class Configurador {
         pubnub = new PubNub(pnConfiguration);
     }
 
-    public void publish(Block bloco) {
+    public void publish(String json) {
         try {
-            pubnub.publish().channel(kChannel).message(bloco).async(new PNCallback<PNPublishResult>() {
+            pubnub.publish().channel(kChannel).message(json).async(new PNCallback<PNPublishResult>() {
                 @Override
                 public void onResponse(PNPublishResult result, PNStatus status) {
                     // handle publish response

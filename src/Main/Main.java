@@ -32,8 +32,8 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         //cadCandidato =  new cadastroCandidato();
-        //cadEleitor =  new cadastroEleitor();
-        stage = primaryStage;
+        cadEleitor =  new cadastroEleitor();
+        /*stage = primaryStage;
 
         primaryStage.setTitle("VotingBlockchain - E - Voting Blockchain System ");
 
@@ -57,7 +57,7 @@ public class Main extends Application {
             public void handle(WindowEvent t) {
                 System.exit(0);
             }
-        });
+        });*/
     }
 
     public static void changeScreen(String scr, Eleitor objEleitor) {

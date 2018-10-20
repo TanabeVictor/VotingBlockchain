@@ -1,41 +1,29 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Block {
+public class Block implements Serializable {
 
-    public  String hash;
-    public  String previousHash;
-    private Voto data; //our data will be a simple message.
-    private long timeStamp; //as number of milliseconds since 1/1/1970.
+    public String hash;
+    public String previousHash;
+    public Voto voto;
+    public String dados;
+    private long timeStamp;
     private int nonce;
-
+    
     //Block Constructor.  
-    public Block(Voto data, String previousHash) {
-        this.data = data;
+    public Block(Voto voto, String dados,  String previousHash) {
+        this.voto =  voto;
+        this.dados = dados;
         this.previousHash = previousHash;
         this.timeStamp = new Date().getTime();
-        this.hash = calculateHash();}
+        this.hash = calculateHash();
+    }
 
     //Calculate new hash based on blocks contents
     public String calculateHash() {
-        String calculatedhash = StringUtil.applySha256(previousHash + Long.toString(timeStamp) + Integer.toString(nonce) + data);
+        String calculatedhash = StringUtil.applySha256(previousHash + Long.toString(timeStamp) + Integer.toString(nonce) + voto);
         return calculatedhash;
     }
-
-    //Increases nonce value until hash target is reached.
-    public void mineBlock(int difficulty) {
-        String target = StringUtil.getDificultyString(difficulty); //Create a string with difficulty * "0" 
-        while (!hash.substring(0, difficulty).equals(target)) {
-            nonce++;
-            hash = calculateHash();
-        }
-        System.out.println("Block Mined!!! : " + hash);
-    }
-
 }

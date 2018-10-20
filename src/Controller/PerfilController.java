@@ -20,7 +20,6 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -57,6 +56,8 @@ public class PerfilController implements Initializable {
     SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
     @FXML
     private ImageView imageProfile;
+    @FXML
+    private Label labelEmail;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -81,6 +82,7 @@ public class PerfilController implements Initializable {
                     labelNomePai.setText(objEleitor.getNomePai());
                     labelNomeMae.setText(objEleitor.getNomeMae());
                     labelSituacao.setText(objEleitor.getSituacao());
+                    labelEmail.setText(objEleitor.getEmail());
                     eleitor = objEleitor;
                 }
             }

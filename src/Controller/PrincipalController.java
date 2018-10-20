@@ -4,12 +4,21 @@ import Main.Main;
 import Model.Block;
 import Model.Candidato;
 import Model.Eleitor;
+import Model.SendHTMLEmail;
 import Model.Voto;
 import java.io.File;
+import java.io.UnsupportedEncodingException;
 import java.net.URL;
+import java.security.InvalidKeyException;
+import java.security.KeyPair;
+import java.security.KeyPairGenerator;
+import java.security.NoSuchAlgorithmException;
+import java.security.Signature;
+import java.security.SignatureException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Base64;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -31,7 +40,12 @@ import javafx.scene.image.ImageView;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
+import javax.crypto.BadPaddingException;
+import javax.crypto.Cipher;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
 import javax.swing.JOptionPane;
+import org.codehaus.jackson.map.ObjectMapper;
 
 public class PrincipalController implements Initializable {
 
@@ -44,6 +58,9 @@ public class PrincipalController implements Initializable {
 
     private SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
 
+    private static final byte[] key = "MyDifficultPassw".getBytes();
+
+    private static final String transformation = "AES/ECB/PKCS5Padding";
     @FXML
     private Button buttonConfirma;
     @FXML
@@ -80,15 +97,18 @@ public class PrincipalController implements Initializable {
     private Label labelNomeVice;
     @FXML
     private Label labelNomePartido;
+
     VotoController ctrVoto = new VotoController();
 
     CandidatoController ctrCandidato = new CandidatoController();
+
     @FXML
     private ImageView imagePresidente;
     @FXML
     private ImageView imageVice;
-    Configurador config = new Configurador();
+
     Eleitor eleitor = null;
+
     @FXML
     private Label labelLocalizacao;
     @FXML
@@ -98,6 +118,12 @@ public class PrincipalController implements Initializable {
 
     Block block = null;
 
+    Configurador config = new Configurador();
+
+    ObjectMapper mapper = new ObjectMapper();
+
+    SendHTMLEmail sendMail = new SendHTMLEmail();
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         Main.addOnChangeScreenListener(new Main.OnChangeScreen() {
@@ -241,11 +267,13 @@ public class PrincipalController implements Initializable {
         MediaPlayer mediaPlayer = new MediaPlayer(sound);
         mediaPlayer.play();
         Random random = new Random();
+
         int nroVoto = random.nextInt(99999);
         int idCandidato = Integer.parseInt(labelVoto.getText());
         int nroEleitor = eleitor.getUserID();
         int codLocal = 35;
         int codEleicao = 20180110;
+
         String localizacao = labelLocalizacao.getText();
         String IDAparelho = labelIDAparelho.getText();
 
@@ -253,8 +281,18 @@ public class PrincipalController implements Initializable {
         Date date = new Date();
         dateFormat.format(date);
 
-        block = new Block(new Voto(nroVoto, idCandidato, nroEleitor, codLocal, codEleicao, date, localizacao, IDAparelho), "0");
-        config.publish(block);
+        String dadosVoto = mapper.writeValueAsString(new Voto(nroVoto, idCandidato, nroEleitor, codLocal, codEleicao, date, localizacao, IDAparelho));
+
+        block = new Block(new Voto(nroVoto, idCandidato, nroEleitor, codLocal, codEleicao, date, localizacao, IDAparelho), dadosVoto, "0");
+
+        String json = mapper.writeValueAsString(block);
+
+        String encoded = Base64.getEncoder().encodeToString(json.getBytes());
+
+        config.publish(encoded);
+        
+        sendMail.sendEmail(eleitor.getEmail(), dadosVoto);
+        
         ctrVoto.addVoto(new Voto(nroVoto, idCandidato, nroEleitor, codLocal, codEleicao, date, localizacao, IDAparelho));
 
         Main.changeScreen("confirm");

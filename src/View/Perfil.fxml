@@ -88,6 +88,16 @@
                               <Font size="18.0" />
                            </font>
                         </Label>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="600.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Img/envelope.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="labelEmail" layoutX="641.0" layoutY="13.0" prefHeight="45.0" prefWidth="278.0" text="email@email.com" textFill="WHITE" wrapText="true">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
                      </children>
                   </Pane>
                   <Label layoutX="85.0" layoutY="330.0" text="Recent Activity" textFill="#5c5c5c">
