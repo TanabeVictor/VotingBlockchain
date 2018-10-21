@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="1200.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SaibaMaisController">
+    <stylesheets>
+        <URL value="@/Style/saibamaisStyle.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane prefHeight="600.0" prefWidth="1200.0">
+         <children>
+            <ImageView fitHeight="600.0" fitWidth="1200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Img/Infographic.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="backButton" fitHeight="68.0" fitWidth="25.0" layoutX="45.0" layoutY="51.0" onMouseClicked="#backAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Img/back.png" />
+               </image>
+            </ImageView>
+            <Separator layoutX="100.0" layoutY="84.0" prefHeight="3.0" prefWidth="305.0" />
+            <Label layoutX="104.0" layoutY="47.0" text="Blockchain" textFill="#ac7207">
+               <font>
+                  <Font name="Anson" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="98.0" layoutY="97.0" prefHeight="70.0" prefWidth="425.0" text="A blockchain é uma nova tecnologia de segurança que surgiu com o Bitcoin. Ela funciona assim:" textFill="#615959" wrapText="true">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="98.0" layoutY="159.0" prefHeight="70.0" prefWidth="397.0" text="1 - Um conjunto de dados é selecionado e mantido em um bloco que possuirá uma chave Hash (geralmente é usada a função SHA-256)" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="98.0" layoutY="229.0" prefHeight="63.0" prefWidth="374.0" text="2 - Uma vez que esse bloco é criado, envia-se o mesmo pela rede de forma criptografada usando chaves públicas e privadas." textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="99.0" layoutY="284.0" prefHeight="68.0" prefWidth="348.0" text="3 -  A entidade controladora será responsável por criar uma cadeia de blocos: a " textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="295.0" layoutY="320.0" text="Blockchain" textFill="#ffaa0a">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="99.0" layoutY="349.0" prefHeight="88.0" prefWidth="348.0" text="4 -  Para isso, inicialmente deve-se minerá-los. A mineração consiste em criar um campo nonce de 32 bits no bloco e alterá-lo até conseguir uma série de zeros na primeira cadeia de bits da hash." textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="99.0" layoutY="431.0" prefHeight="99.0" prefWidth="348.0" text="5 - Uma vez que a nova hash é calculada. O bloco é inserido na chain, que é distribuída de forma a manter essa informação entre todos os usuários participantes da rede." textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

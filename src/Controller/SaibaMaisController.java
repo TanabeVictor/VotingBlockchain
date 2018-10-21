@@ -9,40 +9,38 @@ import Main.Main;
 import Model.Eleitor;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 
 /**
  * FXML Controller class
  *
  * @author vitau
  */
-public class ConfirmaController implements Initializable {
+public class SaibaMaisController implements Initializable {
 
     @FXML
-    private Label hora;
-    @FXML
-    private Label data;
-    @FXML
-    private Button buttonLearn;
+    private ImageView backButton;
 
+    /**
+     * Initializes the controller class.
+     */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         Main.addOnChangeScreenListener(new Main.OnChangeScreen() {
             @Override
             public void onScreenChanged(String newScreen, Eleitor objEleitor) {
-                if (newScreen.equals("confirm")) {
-
+                if (newScreen.equals("learn")) {
                 }
             }
         });
     }
 
     @FXML
-    private void learnAction(ActionEvent event) {
-        Main.changeScreen("learn");
+    private void backAction(MouseEvent event) {
+         Main.changeScreen("main");
     }
+
 }

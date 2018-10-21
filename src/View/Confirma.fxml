@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.net.URL?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.image.Image?>
@@ -68,7 +69,7 @@
             <Pane layoutY="60.0" prefHeight="540.0" prefWidth="1200.0">
                <children>
                   <Separator layoutY="440.0" prefWidth="1200.0" />
-                  <Label alignment="TOP_CENTER" layoutX="425.0" layoutY="48.0" prefHeight="53.0" prefWidth="390.0" text="JUSTIÇA ELEITORAL" textAlignment="CENTER">
+                  <Label alignment="TOP_CENTER" layoutX="432.0" layoutY="48.0" prefHeight="53.0" prefWidth="390.0" text="JUSTIÇA ELEITORAL" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="36.0" />
                      </font>
@@ -78,11 +79,36 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Label layoutX="513.0" layoutY="208.0" text="Voto Confirmado!" textFill="#5c5c5c">
+                  <Label layoutX="489.0" layoutY="254.0" text="Seu voto foi registrado!" textFill="#5c5c5c">
                      <font>
-                        <Font name="System Bold" size="24.0" />
+                        <Font name="System Bold" size="26.0" />
                      </font>
                   </Label>
+                  <ImageView fitHeight="88.0" fitWidth="72.0" layoutX="591.0" layoutY="149.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Img/checked.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="321.0" layoutY="299.0" text="Um email de confirmação foi enviado para você, verifique se as informações estão devidamente corretas.">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="416.0" layoutY="323.0" text="Em caso de erro, entre em contato com">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="662.0" layoutY="323.0" text="votingblockchainunifei@gmail.com" textFill="#ff8000">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Button id="buttonLearn" fx:id="buttonLearn" layoutX="581.0" layoutY="377.0" mnemonicParsing="false" onAction="#learnAction" stylesheets="@../Style/style.css" text="Saiba Mais" textFill="#7f7f7f">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Button>
                </children>
             </Pane>
          </children>

@@ -26,6 +26,8 @@ public class HomeController implements Initializable {
 
     EleitorController verificador = new EleitorController();
     Eleitor objEleitor = null;
+    @FXML
+    private Button learnButton;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -67,6 +69,11 @@ public class HomeController implements Initializable {
 
     @FXML
     private void checkboxAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void learnAction(ActionEvent event) {
+         Main.changeScreen("learn");
     }
 
 }

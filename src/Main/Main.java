@@ -25,6 +25,7 @@ public class Main extends Application {
     private static Scene profileScene;
     private static Scene votingScene;
     private static Scene confirmaScene;
+    private static Scene saibaScene;
 
     cadastroCandidato cadCandidato;
     cadastroEleitor cadEleitor;
@@ -32,8 +33,8 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         //cadCandidato =  new cadastroCandidato();
-        cadEleitor =  new cadastroEleitor();
-        /*stage = primaryStage;
+        //cadEleitor =  new cadastroEleitor();
+        stage = primaryStage;
 
         primaryStage.setTitle("VotingBlockchain - E - Voting Blockchain System ");
 
@@ -48,6 +49,9 @@ public class Main extends Application {
 
         Parent fxmlConfirma = FXMLLoader.load(getClass().getResource("/View/Confirma.fxml"));
         confirmaScene = new Scene(fxmlConfirma, 1200, 600);
+        
+        Parent fxmlSaiba = FXMLLoader.load(getClass().getResource("/View/Saiba Mais.fxml"));
+        saibaScene = new Scene(fxmlSaiba, 1200, 600);
 
         primaryStage.setScene(mainScene);
         primaryStage.show();
@@ -57,7 +61,7 @@ public class Main extends Application {
             public void handle(WindowEvent t) {
                 System.exit(0);
             }
-        });*/
+        });
     }
 
     public static void changeScreen(String scr, Eleitor objEleitor) {
@@ -76,9 +80,15 @@ public class Main extends Application {
                 stage.setScene(votingScene);
                 notifyAllListeners("voting", objEleitor);
                 break;
+            
             case "confirm":
                 stage.setScene(confirmaScene);
                 notifyAllListeners("confirm", objEleitor);
+                break;
+                
+            case "learn":
+                stage.setScene(saibaScene);
+                notifyAllListeners("learn", objEleitor);
                 break;
         }
     }

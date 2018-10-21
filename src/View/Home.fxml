@@ -101,7 +101,7 @@
                         <Font name="Megan June" size="24.0" />
                      </font>
                   </Label>
-                  <Button id="buttonLearn" layoutX="40.0" layoutY="430.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="120.0" stylesheets="@../Style/style.css" text="LEARN MORE" textFill="#545454">
+                  <Button id="buttonLearn" fx:id="learnButton" layoutX="40.0" layoutY="430.0" mnemonicParsing="false" onAction="#learnAction" prefHeight="30.0" prefWidth="120.0" stylesheets="@../Style/style.css" text="LEARN MORE" textFill="#545454">
                      <font>
                         <Font size="14.0" />
                      </font>
