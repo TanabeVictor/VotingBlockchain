@@ -7,14 +7,7 @@ import Model.Eleitor;
 import Model.SendHTMLEmail;
 import Model.Voto;
 import java.io.File;
-import java.io.UnsupportedEncodingException;
 import java.net.URL;
-import java.security.InvalidKeyException;
-import java.security.KeyPair;
-import java.security.KeyPairGenerator;
-import java.security.NoSuchAlgorithmException;
-import java.security.Signature;
-import java.security.SignatureException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -40,10 +33,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
-import javax.crypto.BadPaddingException;
-import javax.crypto.Cipher;
-import javax.crypto.IllegalBlockSizeException;
-import javax.crypto.NoSuchPaddingException;
 import javax.swing.JOptionPane;
 import org.codehaus.jackson.map.ObjectMapper;
 
@@ -51,16 +40,11 @@ public class PrincipalController implements Initializable {
 
     @FXML
     private Label hora;
-
-    public static int difficulty = 5;
-
+   
     private SimpleDateFormat formatador = new SimpleDateFormat("HH:mm:ss");
 
     private SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
 
-    private static final byte[] key = "MyDifficultPassw".getBytes();
-
-    private static final String transformation = "AES/ECB/PKCS5Padding";
     @FXML
     private Button buttonConfirma;
     @FXML
@@ -291,10 +275,12 @@ public class PrincipalController implements Initializable {
 
         config.publish(encoded);
         
-        sendMail.sendEmail(eleitor.getEmail(), dadosVoto);
+        //sendMail.sendEmail(eleitor.getEmail(), dadosVoto);
         
         ctrVoto.addVoto(new Voto(nroVoto, idCandidato, nroEleitor, codLocal, codEleicao, date, localizacao, IDAparelho));
-
+        
+        labelVoto.setText("");
+        
         Main.changeScreen("confirm");
     }
 
