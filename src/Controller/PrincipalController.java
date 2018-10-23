@@ -274,8 +274,12 @@ public class PrincipalController implements Initializable {
         String encoded = Base64.getEncoder().encodeToString(json.getBytes());
 
         config.publish(encoded);
+      
+        String nova2 = dadosVoto.replace("\\", "");
+        String nova3 = nova2.replace(":", "");
+        String[] textoSeparado = nova3.split("\"");
         
-        //sendMail.sendEmail(eleitor.getEmail(), dadosVoto);
+        sendMail.sendEmail(eleitor.getEmail(), textoSeparado);
         
         ctrVoto.addVoto(new Voto(nroVoto, idCandidato, nroEleitor, codLocal, codEleicao, date, localizacao, IDAparelho));
         
