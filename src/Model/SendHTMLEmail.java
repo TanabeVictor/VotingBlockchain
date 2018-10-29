@@ -40,19 +40,17 @@ public class SendHTMLEmail {
         //
         // Este email HTML tem 2 partes, BODY e imagem embutida
         //
-        
-        
         MimeMultipart multipart = new MimeMultipart("related");
         // 1a parte- html
         String corrigida1 = messageText[18].replace(",", "");
         String corrigida2 = messageText[12].replace(",", "");
-        
+
         BodyPart messageBodyPart = new MimeBodyPart();
-        String htmlText = "<H1>Dados do Voto</H1><br>Olá, eleitor <b>"+corrigida1+
-                          "</b> tudo bem?<br><br>Estamos te enviando esse email para confirmar o seu voto!<br>No dia de hoje, você votou em: <b>"+messageText[3]+
-                          "</b>.<br>No aparelho de identificação: <b>"+messageText[7]+"</b>.<br>E seu voto foi no candidato: <b>"
-                          +corrigida2+"</b>.<br><br>Algum dado não confere? Envie um email para votingblockchainunifei@gmail.com<br><br>Obrigado!<br><br><img src=\"cid:image\">";
-        
+        String htmlText = "<H1>Dados do Voto</H1><br>Olá, eleitor <b>" + corrigida1
+                + "</b>, tudo bem?<br><br>Estamos te enviando esse email para confirmar o seu voto!<br>No dia de hoje, você votou em: <b>" + messageText[3]
+                + "</b>.<br>No aparelho de identificação: <b>" + messageText[7] + "</b>.<br>E seu voto foi no candidato: <b>"
+                + corrigida2 + "</b>.<br><br>Algum dado não confere? Envie um email para votingblockchainunifei@gmail.com<br><br>Obrigado!<br><br><img src=\"cid:image\">";
+
         messageBodyPart.setContent(htmlText, "text/html");
         // Adiciona
         multipart.addBodyPart(messageBodyPart);

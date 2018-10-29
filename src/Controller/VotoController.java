@@ -18,13 +18,11 @@ public class VotoController {
         gravaLista();
     }
 
-    public Voto retornaVoto(int matricula) {
+    public Voto retornaVoto() {
         Voto objVoto = null;
         for (int intIdx = 0; intIdx < listaVotos.size(); intIdx++) {
             objVoto = (Voto) listaVotos.elementAt(intIdx);
-            if ((objVoto.getNroEleitor() == matricula)) {
                 return objVoto;
-            }
         }
         return null;
     }

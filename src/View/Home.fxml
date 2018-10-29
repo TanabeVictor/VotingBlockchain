@@ -28,7 +28,7 @@
                      </font>
                   </Label>
                   <Separator layoutX="1.0" layoutY="550.0" prefHeight="15.0" prefWidth="699.0" />
-                  <Label id="signInText2" layoutX="35.0" layoutY="85.0" stylesheets="@../Style/style.css" text="Sign In" textFill="#5c5c5c">
+                  <Label id="signInText2" layoutX="35.0" layoutY="85.0" onMouseClicked="#cadastroAction" stylesheets="@../Style/style.css" text="Sign In" textFill="#5c5c5c">
                      <font>
                         <Font name="Megan June" size="30.0" />
                      </font>
@@ -53,12 +53,12 @@
                         <Font name="Agency FB Bold" size="14.0" />
                      </font>
                   </Button>
-                  <Label id="signInText" layoutX="150.0" layoutY="85.0" stylesheets="@../Style/style.css" text="Sign Up" textFill="#e88c37">
+                  <Label id="signInText" layoutX="192.0" layoutY="85.0" stylesheets="@../Style/style.css" text="Sign Up" textFill="#e88c37">
                      <font>
                         <Font name="Megan June" size="30.0" />
                      </font>
                   </Label>
-                  <Label layoutX="120.0" layoutY="94.0" text="or" textFill="#5c5c5c">
+                  <Label layoutX="143.0" layoutY="94.0" text="or" textFill="#5c5c5c">
                      <font>
                         <Font name="Megan June" size="24.0" />
                      </font>
@@ -96,7 +96,7 @@
                         <Font name="Megan June" size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="95.0" layoutY="35.0" text="Blockchain" textFill="#9a5609">
+                  <Label layoutX="119.0" layoutY="35.0" text="Blockchain" textFill="#9a5609">
                      <font>
                         <Font name="Megan June" size="24.0" />
                      </font>

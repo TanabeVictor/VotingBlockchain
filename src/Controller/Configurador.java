@@ -10,7 +10,7 @@ public class Configurador {
 
     final String PubKey = "pub-c-31f3dfb1-6a10-41d4-9a28-79be076f44db";
     final String SubKey = "sub-c-37f4b6b8-d3ba-11e8-bbf2-f202706b73e5";
-    final String UserId = "Teste";
+    final String UserId = "Urna";
     final String kChannel = "Votacao";
     PubNub pubnub;
 

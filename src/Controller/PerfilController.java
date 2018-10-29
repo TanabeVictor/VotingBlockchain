@@ -7,6 +7,7 @@ package Controller;
 
 import Main.Main;
 import Model.Eleitor;
+import Model.Voto;
 import java.io.File;
 import java.net.URL;
 import java.text.SimpleDateFormat;
@@ -20,6 +21,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -58,6 +60,11 @@ public class PerfilController implements Initializable {
     private ImageView imageProfile;
     @FXML
     private Label labelEmail;
+    @FXML
+    private Label labelVotou;
+
+    VotoController verificadorUnico = new VotoController();
+    Voto voto = null;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -65,6 +72,13 @@ public class PerfilController implements Initializable {
             @Override
             public void onScreenChanged(String newScreen, Eleitor objEleitor) {
                 if (newScreen.equals("profile")) {
+                    try {
+                        verificador.recuperaLista();
+                        verificadorUnico.recuperaLista();
+                        voto = verificadorUnico.retornaVoto();
+                    } catch (Exception ex) {
+                        JOptionPane.showMessageDialog(null, "Erro ao Recuperar Lista");
+                    }
                     File file = new File("src/Img/Eleitores/" + objEleitor.getUserID() + ".jpg");
                     Image image = new Image(file.toURI().toString());
                     imageProfile.setImage(image);
@@ -84,6 +98,11 @@ public class PerfilController implements Initializable {
                     labelSituacao.setText(objEleitor.getSituacao());
                     labelEmail.setText(objEleitor.getEmail());
                     eleitor = objEleitor;
+                    if (voto == null) {
+                        labelVotou.setText(objEleitor.getNomeEleitor() + " ainda não votou para Presidente!");
+                    } else {
+                        labelVotou.setText(objEleitor.getNomeEleitor() + " já votou para Presidente!");
+                    }
                 }
             }
         });
@@ -91,7 +110,11 @@ public class PerfilController implements Initializable {
 
     @FXML
     private void nextAction(ActionEvent event) {
-        Main.changeScreen("voting", eleitor);
+        if (voto == null) {
+            Main.changeScreen("voting", eleitor);
+        } else {
+            JOptionPane.showMessageDialog(null, "Eleitor Já Votou!");
+        }
     }
 
     @FXML

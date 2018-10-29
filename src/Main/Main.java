@@ -6,8 +6,6 @@
 package Main;
 
 import Model.Eleitor;
-import Model.cadastroCandidato;
-import Model.cadastroEleitor;
 import java.util.ArrayList;
 import javafx.application.Application;
 import javafx.event.EventHandler;
@@ -26,9 +24,8 @@ public class Main extends Application {
     private static Scene votingScene;
     private static Scene confirmaScene;
     private static Scene saibaScene;
-
-    cadastroCandidato cadCandidato;
-    cadastroEleitor cadEleitor;
+    private static Scene cadastroScene;
+    
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -52,6 +49,9 @@ public class Main extends Application {
         
         Parent fxmlSaiba = FXMLLoader.load(getClass().getResource("/View/Saiba Mais.fxml"));
         saibaScene = new Scene(fxmlSaiba, 1200, 600);
+        
+        Parent fxmlCadastro = FXMLLoader.load(getClass().getResource("/View/Cadastro.fxml"));
+        cadastroScene = new Scene(fxmlCadastro, 1200, 600);
 
         primaryStage.setScene(mainScene);
         primaryStage.show();
@@ -89,6 +89,11 @@ public class Main extends Application {
             case "learn":
                 stage.setScene(saibaScene);
                 notifyAllListeners("learn", objEleitor);
+                break;
+                
+            case "register":
+                stage.setScene(cadastroScene);
+                notifyAllListeners("register", objEleitor);
                 break;
         }
     }

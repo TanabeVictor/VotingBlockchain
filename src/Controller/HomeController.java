@@ -11,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javax.swing.JOptionPane;
 
 public class HomeController implements Initializable {
@@ -73,7 +74,16 @@ public class HomeController implements Initializable {
 
     @FXML
     private void learnAction(ActionEvent event) {
-         Main.changeScreen("learn");
+        userLabel.setText("");
+        passwordLabel.setText("");
+        Main.changeScreen("learn");
+    }
+
+    @FXML
+    private void cadastroAction(MouseEvent event) {
+        userLabel.setText("");
+        passwordLabel.setText("");
+        Main.changeScreen("register");
     }
 
 }

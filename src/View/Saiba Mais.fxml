@@ -51,7 +51,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="295.0" layoutY="320.0" text="Blockchain" textFill="#ffaa0a">
+            <Label layoutX="210.0" layoutY="342.0" text="Blockchain" textFill="#ffaa0a">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>

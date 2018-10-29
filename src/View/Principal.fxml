@@ -25,7 +25,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="100.0" layoutY="20.0" text="Blockchain" textFill="WHITE">
+                  <Label layoutX="110.0" layoutY="20.0" text="Blockchain" textFill="WHITE">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -74,7 +74,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="269.0" layoutY="141.0" text="Presidente">
+                  <Label layoutX="275.0" layoutY="142.0" text="Presidente">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -129,7 +129,7 @@
                         <Font size="14.0" />
                      </font>
                   </Label>
-                  <Button fx:id="buttonConfirma" layoutX="1013.0" layoutY="465.0" mnemonicParsing="false" onAction="#mouseEventConfirma" prefHeight="50.0" prefWidth="80.0" style="-fx-background-color: #20d608;" text="CONFIRMA">
+                  <Button fx:id="buttonConfirma" layoutX="1013.0" layoutY="465.0" mnemonicParsing="false" onAction="#mouseEventConfirma" prefHeight="50.0" prefWidth="104.0" style="-fx-background-color: #20d608;" text="CONFIRMA">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -214,12 +214,12 @@
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </Button>
-                  <Label alignment="TOP_CENTER" layoutX="868.0" layoutY="45.0" prefHeight="28.0" prefWidth="171.0" text="JUSTIÇA ELEITORAL" textAlignment="CENTER">
+                  <Label alignment="TOP_CENTER" layoutX="853.0" layoutY="46.0" prefHeight="28.0" prefWidth="225.0" text="JUSTIÇA ELEITORAL" textAlignment="CENTER">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <Label fx:id="labelNome" layoutX="180.0" layoutY="60.0" text="Victor Tanabe">
+                  <Label fx:id="labelNome" layoutX="199.0" layoutY="60.0" text="Victor Tanabe">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
