@@ -12,7 +12,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
@@ -38,10 +37,6 @@ public class RegistraEleitorController implements Initializable {
     private Button ConfirmaCadastroButton;
 
     Eleitor objEleitor = null;
-    @FXML
-    private Label hora;
-    @FXML
-    private Label data;
     @FXML
     private TextField situacaoLabel;
     @FXML

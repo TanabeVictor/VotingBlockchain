@@ -1,5 +1,5 @@
 #sidebar{
-    -fx-background-color: #1d1d1e;
+    -fx-background-color: linear-gradient(to right, #000735, #010e66);
     
 }
 
@@ -19,7 +19,7 @@
 }
 
 #topBar{
-    -fx-background-color: #ff7d0c;
+    -fx-background-color: #181838;
 }
 
 #labelView{
@@ -59,29 +59,29 @@
 
 #buttonLogin{
 	-fx-background-color: transparent;
-        -fx-border-color: 
-        linear-gradient(from 0% 93% to 0% 100%, #a34313 0%, #903b12 100%),
-        #9d4024,
-        #d86e3a,
-        radial-gradient(center 50% 50%, radius 100%, #d86e3a, #c54e2c);
+    -fx-border-color: #ff0000;
         -fx-border-radius: 5;
         -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );
 }
 
 #buttonLearn{
 	-fx-background-color: transparent;
-	-fx-border-color: 
-        linear-gradient(from 0% 93% to 0% 100%, #a34313 0%, #903b12 100%),
-        #9d4024,
-        #d86e3a,
-        radial-gradient(center 50% 50%, radius 100%, #d86e3a, #c54e2c);
-        -fx-border-radius: 5;
-        -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );
+	-fx-border-color: #ff0000;
+    -fx-border-radius: 5;
 }
+
+
+#buttonLearn2{
+    -fx-background-color: transparent;
+    -fx-border-color: #FFF;
+    -fx-border-radius: 5;
+    -fx-border-width: 1 0 1 1;
+}
+
 
 #signInText{
 	-fx-border-width: 0 0 1 0;
-	-fx-border-color: #ff6a00;
+	-fx-border-color: #f8534d;
 	-fx-padding: 5;
 }
 

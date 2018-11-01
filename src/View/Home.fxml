@@ -20,92 +20,88 @@
    <children>
       <AnchorPane prefHeight="600.0" prefWidth="1200.0">
          <children>
-            <Pane layoutX="500.0" prefHeight="594.0" prefWidth="699.0">
+            <Pane layoutX="600.0" prefHeight="594.0" prefWidth="599.0">
                <children>
-                  <Label layoutX="540.0" layoutY="565.0" text="© 2018, Victor Tanabe" textFill="#8f8f8f">
+                  <Label layoutX="425.0" layoutY="573.0" text="© 2018, Victor Tanabe" textFill="#8f8f8f">
                      <font>
                         <Font name="Segoe UI" size="14.0" />
                      </font>
                   </Label>
-                  <Separator layoutX="1.0" layoutY="550.0" prefHeight="15.0" prefWidth="699.0" />
-                  <Label id="signInText2" layoutX="35.0" layoutY="85.0" onMouseClicked="#cadastroAction" stylesheets="@../Style/style.css" text="Sign In" textFill="#5c5c5c">
+                  <Separator layoutY="550.0" prefHeight="15.0" prefWidth="600.0" />
+                  <Label id="signInText2" fx:id="signInLabel" layoutX="40.0" layoutY="86.0" onMouseClicked="#cadastroAction" stylesheets="@../Style/style.css" text="Cadastre-se" textFill="#5c5c5c">
                      <font>
                         <Font name="Megan June" size="30.0" />
                      </font>
                   </Label>
-                  <PasswordField id="fieldLogin" fx:id="passwordLabel" layoutX="40.0" layoutY="280.0" prefHeight="25.0" prefWidth="600.0" promptText="Password" stylesheets="@../Style/style.css">
+                  <PasswordField id="fieldLogin" fx:id="passwordLabel" layoutX="40.0" layoutY="280.0" prefHeight="32.0" prefWidth="490.0" promptText="Senha" stylesheets="@../Style/style.css">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </PasswordField>
-                  <TextField id="fieldLogin" fx:id="userLabel" layoutX="40.0" layoutY="200.0" prefHeight="25.0" prefWidth="600.0" promptText="Matricula" stylesheets="@../Style/style.css">
+                  <TextField id="fieldLogin" fx:id="userLabel" layoutX="40.0" layoutY="200.0" prefHeight="31.0" prefWidth="490.0" promptText="Matricula" stylesheets="@../Style/style.css">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <CheckBox id="checkbox" fx:id="rememberCheckbox" layoutX="40.0" layoutY="350.0" mnemonicParsing="false" onAction="#checkboxAction" stylesheets="@../Style/style.css" text="Remember Me" textFill="#5c5c5c">
+                  <CheckBox id="checkbox" fx:id="rememberCheckbox" layoutX="40.0" layoutY="350.0" mnemonicParsing="false" onAction="#checkboxAction" stylesheets="@../Style/style.css" text="Lembrar-me" textFill="#5c5c5c">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </CheckBox>
-                  <Button id="buttonLogin" fx:id="loginButton" layoutX="40.0" layoutY="430.0" mnemonicParsing="false" onAction="#loginAction" prefHeight="30.0" prefWidth="120.0" stylesheets="@../Style/style.css" text="LOGIN" textFill="#f27900">
+                  <Button id="buttonLogin" fx:id="loginButton" layoutX="413.0" layoutY="410.0" mnemonicParsing="false" onAction="#loginAction" prefHeight="30.0" prefWidth="120.0" stylesheets="@../Style/style.css" text="LOGIN" textFill="#5f5f5f">
                      <font>
                         <Font name="Agency FB Bold" size="14.0" />
                      </font>
                   </Button>
-                  <Label id="signInText" layoutX="192.0" layoutY="85.0" stylesheets="@../Style/style.css" text="Sign Up" textFill="#e88c37">
+                  <Label id="signInText" fx:id="signUpLabel" layoutX="237.0" layoutY="87.0" stylesheets="@../Style/style.css" text="Entre" textFill="#f8534d">
                      <font>
                         <Font name="Megan June" size="30.0" />
                      </font>
                   </Label>
-                  <Label layoutX="143.0" layoutY="94.0" text="or" textFill="#5c5c5c">
+                  <Label fx:id="orLabel" layoutX="192.0" layoutY="94.0" text="ou" textFill="#5c5c5c">
                      <font>
                         <Font name="Megan June" size="24.0" />
                      </font>
                   </Label>
-                  <Separator layoutX="68.0" layoutY="150.0" prefHeight="4.0" prefWidth="584.0" />
+                  <Separator layoutX="46.0" layoutY="150.0" prefHeight="2.0" prefWidth="486.0" />
                </children>
             </Pane>
-            <Pane id="sidebar" prefHeight="600.0" prefWidth="500.0" styleClass="mainFxmlClass" stylesheets="@../Style/style.css">
+            <Pane id="sidebar" prefHeight="600.0" prefWidth="600.0" styleClass="mainFxmlClass" stylesheets="@../Style/style.css">
                <children>
-                  <Label layoutX="40.0" layoutY="250.0" prefHeight="117.0" prefWidth="420.0" text="Exerça a sua cidadania e mantenha seu voto seguro através do Blockchain. Vote agora mesmo, de onde estiver e tenha a certeza da segurança de seu voto." textFill="WHITE" wrapText="true">
+                  <Label fx:id="descriptionLabel" layoutX="114.0" layoutY="247.0" prefHeight="117.0" prefWidth="420.0" text="Exerça a sua cidadania e mantenha seu voto seguro através do Blockchain. Vote agora mesmo, de onde estiver e tenha a certeza da segurança de seu voto." textAlignment="CENTER" textFill="WHITE" wrapText="true">
                      <font>
-                        <Font name="Segoe UI Light" size="16.0" />
+                        <Font name="Segoe UI Light" size="15.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="249.0" fitWidth="196.0" layoutX="307.0" layoutY="394.0" nodeOrientation="INHERIT" opacity="0.15" pickOnBounds="true" preserveRatio="true">
+                  <Separator layoutX="597.0" orientation="VERTICAL" prefHeight="600.0" prefWidth="5.0" />
+                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="173.0" layoutY="472.0" pickOnBounds="true" preserveRatio="true" />
+                  <Separator layoutX="159.0" layoutY="245.0" opacity="0.15" prefHeight="2.0" prefWidth="315.0" />
+                  <Label fx:id="logoII" layoutX="349.0" layoutY="184.0" text=".io" textFill="WHITE">
+                     <font>
+                        <Font name="Bebas Neue Regular" size="32.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="logoI" layoutX="262.0" layoutY="184.0" text="Blockfy" textFill="RED">
+                     <font>
+                        <Font name="Bebas Neue Regular" size="32.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="106.0" fitWidth="106.0" layoutX="272.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Img/election.png" />
+                        <Image url="@../Img/icon.png" />
                      </image>
                   </ImageView>
-                  <Separator layoutX="497.0" orientation="VERTICAL" prefHeight="600.0" prefWidth="5.0" />
-                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="173.0" layoutY="472.0" pickOnBounds="true" preserveRatio="true" />
-                  <Label layoutX="41.0" layoutY="136.0" text="Seja" textFill="#ff6200">
+                  <Pane layoutX="235.0" layoutY="410.0" prefHeight="30.0" prefWidth="30.0" style="-fx-background-color: #fff; -fx-background-radius: 5;" />
+                  <Button id="buttonLearn" fx:id="learnButton" contentDisplay="RIGHT" layoutX="233.0" layoutY="410.0" mnemonicParsing="false" onAction="#learnAction" prefHeight="32.0" prefWidth="174.0" stylesheets="@../Style/style.css" text="LEARN MORE" textAlignment="RIGHT" textFill="WHITE">
                      <font>
-                        <Font size="36.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="41.0" layoutY="181.0" text="Bem Vindo." textFill="#ff6200">
-                     <font>
-                        <Font name="System Bold" size="36.0" />
-                     </font>
-                  </Label>
-                  <Separator layoutX="40.0" layoutY="247.0" opacity="0.13" prefHeight="3.0" prefWidth="262.0" style="-fx-border-color: #606060; -fx-background-color: #606060;" />
-                  <Label layoutX="45.0" layoutY="35.0" text="Voting" textFill="#acaaaa">
-                     <font>
-                        <Font name="Megan June" size="24.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="119.0" layoutY="35.0" text="Blockchain" textFill="#9a5609">
-                     <font>
-                        <Font name="Megan June" size="24.0" />
-                     </font>
-                  </Label>
-                  <Button id="buttonLearn" fx:id="learnButton" layoutX="40.0" layoutY="430.0" mnemonicParsing="false" onAction="#learnAction" prefHeight="30.0" prefWidth="120.0" stylesheets="@../Style/style.css" text="LEARN MORE" textFill="#545454">
-                     <font>
-                        <Font size="14.0" />
+                        <Font name="System Bold" size="13.0" />
                      </font>
                   </Button>
+                  <ImageView fitHeight="18.0" fitWidth="16.0" layoutX="241.0" layoutY="418.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Img/navigation.png" />
+                     </image>
+                  </ImageView>
                </children></Pane>
          </children>
       </AnchorPane>

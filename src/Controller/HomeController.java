@@ -9,9 +9,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Font;
 import javax.swing.JOptionPane;
 
 public class HomeController implements Initializable {
@@ -24,16 +26,34 @@ public class HomeController implements Initializable {
     private TextField userLabel;
     @FXML
     private CheckBox rememberCheckbox;
+    @FXML
+    private Label logoII;
+    @FXML
+    private Label logoI;
+    @FXML
+    private Button learnButton;
 
     EleitorController verificador = new EleitorController();
     Eleitor objEleitor = null;
     @FXML
-    private Button learnButton;
+    private Label signInLabel;
+    @FXML
+    private Label signUpLabel;
+    @FXML
+    private Label orLabel;
+    @FXML
+    private Label descriptionLabel;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         try {
             verificador.recuperaLista();
+            logoI.setFont(Font.loadFont(HomeController.class.getResource("/Font/BebasNeue-Regular.ttf").toExternalForm(),32));
+            logoII.setFont(Font.loadFont(HomeController.class.getResource("/Font/BebasNeue-Regular.ttf").toExternalForm(),32));
+            signInLabel.setFont(Font.loadFont(HomeController.class.getResource("/Font/MeganJune.otf").toExternalForm(),30));
+            signUpLabel.setFont(Font.loadFont(HomeController.class.getResource("/Font/MeganJune.otf").toExternalForm(),30));
+            orLabel.setFont(Font.loadFont(HomeController.class.getResource("/Font/MeganJune.otf").toExternalForm(),24));
+            descriptionLabel.setFont(Font.loadFont(HomeController.class.getResource("/Font/SegoeUiLight.ttf").toExternalForm(),15));
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "Erro ao Recuperar Lista de Eleitores!");
         }
