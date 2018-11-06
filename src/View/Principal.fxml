@@ -20,9 +20,9 @@
          <children>
             <Pane id="topBar" prefHeight="60.0" prefWidth="1200.0" stylesheets="@../Style/style.css">
                <children>
-                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="1150.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="1150.0" layoutY="15.0" onMouseClicked="#exitAction" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Img/menu.png" />
+                        <Image url="@../Img/power-button-off.png" />
                      </image>
                   </ImageView>
                   <Label layoutX="536.0" layoutY="25.0" text="Horário Oficial: " textFill="WHITE">
@@ -214,8 +214,8 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </Label>
-                  <ImageView fx:id="imagePresidente" fitHeight="180.0" fitWidth="155.0" layoutX="445.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fx:id="imageVice" fitHeight="180.0" fitWidth="155.0" layoutX="445.0" layoutY="250.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imagePresidente" fitHeight="180.0" fitWidth="155.0" layoutX="571.0" layoutY="44.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="imageVice" fitHeight="180.0" fitWidth="155.0" layoutX="571.0" layoutY="254.0" pickOnBounds="true" preserveRatio="true" />
                   <Label layoutX="1167.0" layoutY="179.0" rotate="-90.0" text="ID:" />
                   <Label fx:id="labelIDAparelho" layoutX="1140.0" layoutY="130.0" rotate="-90.0" text="0x14d5790" textFill="#5c5c5c">
                      <font>

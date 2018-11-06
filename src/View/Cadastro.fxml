@@ -21,9 +21,9 @@
          <children>
             <Pane id="topBar" prefHeight="60.0" prefWidth="1200.0" stylesheets="@../Style/style.css">
                <children>
-                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="1150.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="1150.0" layoutY="15.0" onMouseClicked="#exitAction" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Img/menu.png" />
+                        <Image url="@../Img/power-button-off.png" />
                      </image>
                   </ImageView>
                   <Label layoutX="890.0" layoutY="25.0" text="Minas Gerais, Brazil" textFill="WHITE">
@@ -40,9 +40,13 @@
             </Pane>
             <Pane prefHeight="600.0" prefWidth="1200.0">
                <children>
-                  <PasswordField id="fieldLogin" fx:id="passwordField" layoutX="650.0" layoutY="403.0" prefHeight="25.0" prefWidth="450.0" promptText="Senha" stylesheets="@../Style/style.css" />
+                  <PasswordField id="fieldLogin" fx:id="passwordField" layoutX="759.0" layoutY="441.0" prefHeight="26.0" prefWidth="324.0" promptText="Senha" stylesheets="@../Style/style.css">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </PasswordField>
                   <Separator layoutX="300.0" layoutY="550.0" prefHeight="15.0" prefWidth="600.0" />
-                  <Label id="signInText2" layoutX="498.0" layoutY="88.0" stylesheets="@../Style/style.css" text="Cadastro de Eleitor" textFill="#ff0202">
+                  <Label id="signInText2" layoutX="161.0" layoutY="86.0" prefHeight="49.0" prefWidth="241.0" stylesheets="@../Style/style.css" text="Cadastro de Eleitor" textFill="#ff0202">
                      <font>
                         <Font name="Bebas Neue Regular" size="30.0" />
                      </font>
@@ -57,73 +61,73 @@
                         </Lighting>
                      </effect>
                   </Label>
-                  <TextField id="fieldLogin" fx:id="nomeEleitorLabel" layoutX="100.0" layoutY="250.0" prefHeight="25.0" prefWidth="450.0" promptText="Nome Completo" stylesheets="@../Style/style.css">
+                  <TextField id="fieldLogin" fx:id="nomeEleitorLabel" layoutX="169.0" layoutY="285.0" prefHeight="31.0" prefWidth="498.0" promptText="Nome Completo" stylesheets="@../Style/style.css">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <Separator layoutX="300.0" layoutY="150.0" prefHeight="4.0" prefWidth="600.0" />
-                  <Label layoutX="650.0" layoutY="200.0" text="Sexo:" textFill="#7c7474">
+                  <Separator layoutX="167.0" layoutY="178.0" prefHeight="15.0" prefWidth="498.0" />
+                  <Label layoutX="762.0" layoutY="265.0" text="Sexo" textFill="#7c7474">
                      <font>
-                        <Font size="16.0" />
+                        <Font size="14.0" />
                      </font>
                   </Label>
-                  <Button fx:id="ConfirmaCadastroButton" contentDisplay="CENTER" layoutX="550.0" layoutY="480.0" mnemonicParsing="false" onAction="#confirmaCadastroAction" prefHeight="35.0" prefWidth="100.0" scaleX="1.2" scaleY="1.2" text="Confirmar">
+                  <Button fx:id="ConfirmaCadastroButton" contentDisplay="CENTER" layoutX="977.0" layoutY="517.0" mnemonicParsing="false" onAction="#confirmaCadastroAction" prefHeight="20.0" prefWidth="100.0" scaleX="1.2" scaleY="1.2" text="Confirmar">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
-                  <TextField id="fieldLogin" fx:id="codigoEleitorLabel" layoutX="100.0" layoutY="200.0" prefHeight="25.0" prefWidth="450.0" promptText="Código do Eleitor" stylesheets="@../Style/style.css">
+                  <TextField id="fieldLogin" fx:id="codigoEleitorLabel" layoutX="167.0" layoutY="213.0" prefHeight="31.0" prefWidth="194.0" promptText="Matrícula do Eleitor" stylesheets="@../Style/style.css">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField id="fieldLogin" fx:id="naturalidadeLabel" layoutX="100.0" layoutY="400.0" prefHeight="25.0" prefWidth="450.0" promptText="Naturalidade" stylesheets="@../Style/style.css">
+                  <TextField id="fieldLogin" fx:id="naturalidadeLabel" layoutX="763.0" layoutY="213.0" prefHeight="31.0" prefWidth="324.0" promptText="São Paulo, São Paulo, Brazil" stylesheets="@../Style/style.css">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField id="fieldLogin" fx:id="situacaoLabel" layoutX="650.0" layoutY="300.0" prefHeight="25.0" prefWidth="450.0" promptText="Situação" stylesheets="@../Style/style.css">
+                  <TextField id="fieldLogin" fx:id="situacaoLabel" layoutX="409.0" layoutY="213.0" prefHeight="31.0" prefWidth="258.0" promptText="Regular" stylesheets="@../Style/style.css">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField id="fieldLogin" fx:id="emailLabel" layoutX="650.0" layoutY="350.0" prefHeight="25.0" prefWidth="450.0" promptText="Email" stylesheets="@../Style/style.css">
+                  <TextField id="fieldLogin" fx:id="emailLabel" layoutX="763.0" layoutY="360.0" prefHeight="31.0" prefWidth="324.0" promptText="Email" stylesheets="@../Style/style.css">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField id="fieldLogin" fx:id="nomePaiLabel" layoutX="100.0" layoutY="300.0" prefHeight="25.0" prefWidth="450.0" promptText="Nome Completo do Pai" stylesheets="@../Style/style.css">
+                  <TextField id="fieldLogin" fx:id="nomePaiLabel" layoutX="169.0" layoutY="362.0" prefHeight="31.0" prefWidth="498.0" promptText="Nome Completo do Pai" stylesheets="@../Style/style.css">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField id="fieldLogin" fx:id="nomeMaeLabel" layoutX="100.0" layoutY="350.0" prefHeight="25.0" prefWidth="450.0" promptText="Nome Completo da Mãe" stylesheets="@../Style/style.css">
+                  <TextField id="fieldLogin" fx:id="nomeMaeLabel" layoutX="169.0" layoutY="441.0" prefHeight="31.0" prefWidth="498.0" promptText="Nome Completo da Mãe" stylesheets="@../Style/style.css">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="dataNascDatePicker" layoutX="650.0" layoutY="250.0" prefHeight="25.0" prefWidth="205.0" promptText="Data Nasc. (Ex: XX/XX/XXXX)">
+                  <TextField fx:id="dataNascDatePicker" layoutX="167.0" layoutY="516.0" prefHeight="30.0" prefWidth="233.0" promptText="XX/XX/XXXX">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="dataEmissaoDatePicker" layoutX="888.0" layoutY="250.0" prefHeight="25.0" prefWidth="205.0" promptText="Data Emissão. (Ex: XX/XX/XXXX)">
+                  <TextField fx:id="dataEmissaoDatePicker" layoutX="414.0" layoutY="516.0" prefHeight="30.0" prefWidth="250.0" promptText="XX/XX/XXXX">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </TextField>
-                  <RadioButton fx:id="sexFem" layoutX="748.0" layoutY="198.0" mnemonicParsing="false" onAction="#femininoAction" text="Feminino" textFill="#7c7474">
+                  <RadioButton fx:id="sexFem" layoutX="880.0" layoutY="285.0" mnemonicParsing="false" onAction="#femininoAction" text="Feminino" textFill="#7c7474">
                      <font>
-                        <Font size="16.0" />
+                        <Font size="14.0" />
                      </font>
                   </RadioButton>
-                  <RadioButton fx:id="sexoMasc" layoutX="910.0" layoutY="200.0" mnemonicParsing="false" onAction="#masculinoAction" text="Masculino" textFill="#7c7474">
+                  <RadioButton fx:id="sexoMasc" layoutX="762.0" layoutY="285.0" mnemonicParsing="false" onAction="#masculinoAction" text="Masculino" textFill="#7c7474">
                      <font>
-                        <Font size="16.0" />
+                        <Font size="14.0" />
                      </font>
                   </RadioButton>
-                  <ImageView fx:id="logoutButton" fitHeight="32.0" fitWidth="32.0" layoutX="104.0" layoutY="97.0" onMouseClicked="#logoutAction" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="logoutButton" fitHeight="32.0" fitWidth="32.0" layoutX="69.0" layoutY="97.0" onMouseClicked="#logoutAction" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Img/back.png" />
                      </image>
@@ -133,6 +137,67 @@
                         <Font name="Segoe UI" size="14.0" />
                      </font>
                   </Label>
+                  <Label layoutX="170.0" layoutY="191.0" text="Matricula" textFill="#7c7474">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="169.0" layoutY="162.0" text="Informações Pessoais">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="170.0" layoutY="264.0" text="Nome Completo" textFill="#7c7474">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="169.0" layoutY="342.0" text="Nome do Pai" textFill="#7c7474">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="170.0" layoutY="421.0" text="Nome da Mãe" textFill="#7c7474">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="762.0" layoutY="191.0" text="Naturalidade" textFill="#7c7474">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="762.0" layoutY="310.0" text="Informações da Conta">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="165.0" layoutY="496.0" text="Data de Nascimento" textFill="#7c7474">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="412.0" layoutY="496.0" text="Data de Emissão" textFill="#7c7474">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="762.0" layoutY="340.0" text="Email" textFill="#7c7474">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="762.0" layoutY="419.0" text="Senha" textFill="#7c7474">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="411.0" layoutY="191.0" text="Situação" textFill="#7c7474">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="762.0" layoutY="323.0" prefHeight="15.0" prefWidth="324.0" />
                </children>
             </Pane>
          </children>

@@ -47,16 +47,16 @@ public class RegistraEleitorController implements Initializable {
     private RadioButton sexFem;
     @FXML
     private RadioButton sexoMasc;
-    
+
     String sexo = "";
     @FXML
     private PasswordField passwordField;
     @FXML
     private ImageView logoutButton;
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-         Main.addOnChangeScreenListener(new Main.OnChangeScreen() {
+        Main.addOnChangeScreenListener(new Main.OnChangeScreen() {
             @Override
             public void onScreenChanged(String newScreen, Eleitor objEleitor) {
                 if (newScreen.equals("register")) {
@@ -77,16 +77,16 @@ public class RegistraEleitorController implements Initializable {
         String nomePai = nomePaiLabel.getText();
         String nomeMae = nomeMaeLabel.getText();
         String naturalidade = naturalidadeLabel.getText();
-        String dataNascLabel =  dataNascDatePicker.getText();
+        String dataNascLabel = dataNascDatePicker.getText();
         Date dataNasc = formatter.parse(dataNascLabel);
         String dataEmissaoLabel = dataEmissaoDatePicker.getText();
         Date dataEmissao = formatter.parse(dataEmissaoLabel);
-        String situacao = situacaoLabel.getText();  
+        String situacao = situacaoLabel.getText();
         String email = emailLabel.getText();
         String password = passwordField.getText();
-        
+
         try {
-        CtrEleitor.addEleitor(new Eleitor(nomeEleitor, nomePai, nomeMae, sexo, naturalidade, userID, password, dataNasc, dataEmissao, situacao, email));
+            CtrEleitor.addEleitor(new Eleitor(nomeEleitor, nomePai, nomeMae, sexo, naturalidade, userID, password, dataNasc, dataEmissao, situacao, email));
             sexo = "";
             codigoEleitorLabel.setText("");
             nomeEleitorLabel.setText("");
@@ -95,13 +95,13 @@ public class RegistraEleitorController implements Initializable {
             naturalidadeLabel.setText("");
             dataNascDatePicker.setText("");
             dataEmissaoDatePicker.setText("");
-            situacaoLabel.setText("");  
+            situacaoLabel.setText("");
             emailLabel.setText("");
             passwordField.setText("");
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "Não Foi Possível Cadastrar!");
         }
-         Main.changeScreen("main");
+        Main.changeScreen("main");
     }
 
     @FXML
@@ -116,18 +116,23 @@ public class RegistraEleitorController implements Initializable {
 
     @FXML
     private void logoutAction(MouseEvent event) {
-         sexo = "";
-         codigoEleitorLabel.setText("");
-         nomeEleitorLabel.setText("");
-         nomePaiLabel.setText("");
-         nomeMaeLabel.setText("");
-         naturalidadeLabel.setText("");
-         dataNascDatePicker.setText("");
-         dataEmissaoDatePicker.setText("");
-         situacaoLabel.setText("");  
-         emailLabel.setText("");
-         passwordField.setText("");
-         Main.changeScreen("main");
+        sexo = "";
+        codigoEleitorLabel.setText("");
+        nomeEleitorLabel.setText("");
+        nomePaiLabel.setText("");
+        nomeMaeLabel.setText("");
+        naturalidadeLabel.setText("");
+        dataNascDatePicker.setText("");
+        dataEmissaoDatePicker.setText("");
+        situacaoLabel.setText("");
+        emailLabel.setText("");
+        passwordField.setText("");
+        Main.changeScreen("main");
+    }
+
+    @FXML
+    private void exitAction(MouseEvent event) {
+        System.exit(0);
     }
 
 }

@@ -48,12 +48,9 @@ public class HomeController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         try {
             verificador.recuperaLista();
-            logoI.setFont(Font.loadFont(HomeController.class.getResource("/Font/BebasNeue-Regular.ttf").toExternalForm(),32));
-            logoII.setFont(Font.loadFont(HomeController.class.getResource("/Font/BebasNeue-Regular.ttf").toExternalForm(),32));
-            signInLabel.setFont(Font.loadFont(HomeController.class.getResource("/Font/MeganJune.otf").toExternalForm(),30));
-            signUpLabel.setFont(Font.loadFont(HomeController.class.getResource("/Font/MeganJune.otf").toExternalForm(),30));
-            orLabel.setFont(Font.loadFont(HomeController.class.getResource("/Font/MeganJune.otf").toExternalForm(),24));
-            descriptionLabel.setFont(Font.loadFont(HomeController.class.getResource("/Font/SegoeUiLight.ttf").toExternalForm(),15));
+            logoI.setFont(Font.loadFont(HomeController.class.getResource("/Font/BebasNeue-Regular.ttf").toExternalForm(), 32));
+            logoII.setFont(Font.loadFont(HomeController.class.getResource("/Font/BebasNeue-Regular.ttf").toExternalForm(), 32));
+            descriptionLabel.setFont(Font.loadFont(HomeController.class.getResource("/Font/SegoeUiLight.ttf").toExternalForm(), 18));
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "Erro ao Recuperar Lista de Eleitores!");
         }
@@ -104,6 +101,11 @@ public class HomeController implements Initializable {
         userLabel.setText("");
         passwordLabel.setText("");
         Main.changeScreen("register");
+    }
+
+    @FXML
+    private void exitAction(MouseEvent event) {
+        System.exit(0);
     }
 
 }

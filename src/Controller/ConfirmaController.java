@@ -14,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 
 /**
  * FXML Controller class
@@ -22,10 +23,6 @@ import javafx.scene.control.Label;
  */
 public class ConfirmaController implements Initializable {
 
-    @FXML
-    private Label hora;
-    @FXML
-    private Label data;
     @FXML
     private Button buttonLearn;
 
@@ -44,5 +41,10 @@ public class ConfirmaController implements Initializable {
     @FXML
     private void learnAction(ActionEvent event) {
         Main.changeScreen("learn");
+    }
+
+    @FXML
+    private void exitAction(MouseEvent event) {
+        System.exit(0);
     }
 }

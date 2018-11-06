@@ -19,9 +19,9 @@
          <children>
             <Pane id="topBar" prefHeight="60.0" prefWidth="1200.0" stylesheets="@../Style/style.css">
                <children>
-                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="1150.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="1150.0" layoutY="15.0" onMouseClicked="#exitAction" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Img/menu.png" />
+                        <Image url="@../Img/power-button-off.png" />
                      </image>
                   </ImageView>
                   <Label layoutX="890.0" layoutY="25.0" text="Minas Gerais, Brazil" textFill="WHITE">

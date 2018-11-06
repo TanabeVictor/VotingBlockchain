@@ -51,7 +51,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
-            <Label layoutX="210.0" layoutY="342.0" text="Blockchain" textFill="#ffaa0a">
+            <Label layoutX="300.0" layoutY="320.0" text="Blockchain" textFill="#ffaa0a">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -66,6 +66,11 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </Label>
+            <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="1150.0" layoutY="21.0" onMouseClicked="#exitAction" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Img/power-button-off.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </children>

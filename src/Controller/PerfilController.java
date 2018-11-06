@@ -122,4 +122,9 @@ public class PerfilController implements Initializable {
         Main.changeScreen("main", null);
     }
 
+    @FXML
+    private void exitAction(MouseEvent event) {
+        System.exit(0);
+    }
+
 }

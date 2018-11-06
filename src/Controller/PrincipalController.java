@@ -30,6 +30,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.util.Duration;
@@ -40,7 +41,7 @@ public class PrincipalController implements Initializable {
 
     @FXML
     private Label hora;
-   
+
     private SimpleDateFormat formatador = new SimpleDateFormat("HH:mm:ss");
 
     private SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
@@ -107,7 +108,7 @@ public class PrincipalController implements Initializable {
     ObjectMapper mapper = new ObjectMapper();
 
     SendHTMLEmail sendMail = new SendHTMLEmail();
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         Main.addOnChangeScreenListener(new Main.OnChangeScreen() {
@@ -274,17 +275,17 @@ public class PrincipalController implements Initializable {
         String encoded = Base64.getEncoder().encodeToString(json.getBytes());
 
         config.publish(encoded);
-      
+
         String nova2 = dadosVoto.replace("\\", "");
         String nova3 = nova2.replace(":", "");
         String[] textoSeparado = nova3.split("\"");
-        
+
         sendMail.sendEmail(eleitor.getEmail(), textoSeparado);
-        
+
         ctrVoto.addVoto(new Voto(nroVoto, idCandidato, nroEleitor, codLocal, codEleicao, date, localizacao, IDAparelho));
-        
+
         labelVoto.setText("");
-        
+
         Main.changeScreen("confirm");
     }
 
@@ -296,6 +297,11 @@ public class PrincipalController implements Initializable {
     @FXML
     private void mouseEventBranco(ActionEvent event) {
 
+    }
+
+    @FXML
+    private void exitAction(MouseEvent event) {
+        System.exit(0);
     }
 
 }

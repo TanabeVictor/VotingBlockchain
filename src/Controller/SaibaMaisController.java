@@ -40,7 +40,12 @@ public class SaibaMaisController implements Initializable {
 
     @FXML
     private void backAction(MouseEvent event) {
-         Main.changeScreen("main");
+        Main.changeScreen("main");
+    }
+
+    @FXML
+    private void exitAction(MouseEvent event) {
+        System.exit(0);
     }
 
 }

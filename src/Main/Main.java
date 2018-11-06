@@ -14,7 +14,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.stage.WindowEvent;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
 
 public class Main extends Application {
 
@@ -52,6 +55,7 @@ public class Main extends Application {
         cadastroScene = new Scene(fxmlCadastro, 1200, 600);
 
         primaryStage.setScene(mainScene);
+        primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.show();
         primaryStage.getIcons().add(new Image("/Img/icon.png"));
         primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
